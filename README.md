@@ -112,7 +112,7 @@ If the either the two assignments will not have been submitted, or they are not 
 | Thu, Dec 9 | [29]  [Parallel Performance Analysisscalasca](PerformanceAnalysis/README.md)  |     |
 | Fri, Dec 10 |                                 |    [10] [exercise on parallel performance analysis](PerformanceAnalysis/README.md) |
 | Mon, Dec 13 | [30] [GPU programming/1](GPU/README.md)                                |                                                      |
-| Tue, Dec 14 | [31] [GPU programming/2](GPUREADME.md)                                     |                                                      |
+| Tue, Dec 14 | [31] [GPU programming/2](GPU/README.md)                                     |                                                      |
 | Thu, Dec 16 |                                |  [11] [exercises on GPU](GPU/README.md)                                          |
 | Fri, Dec 17 | [32]  TBD                               |                                                      |
 

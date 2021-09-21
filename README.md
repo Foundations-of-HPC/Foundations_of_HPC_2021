@@ -32,16 +32,17 @@ The scope of the course is to give you:
 
 
 The lectures will be both in presence (this may change in the future according to the evolution of the COVID pandemic) **and** in streaming; each lecture will also be recorded and available to be viewed asynchronously.
-The lectures (the precise calendar is shown in the table below) will be held in **ROOMs 3B-H3** and **F-A** on **Wednesday afternoon** from 14:00 to 16:00, and **Friday morning** from 11:00 to 13:00.
-On **Friday afternoon**, from 14:00 to 16:00, there will be a lab session with exercises on the topics treated during the lectures.
+The lectures (the precise calendar is shown in the table below) will be held in **Aula Morin, building H2bis**
 
-The lectures will **start on Wednesday, 7th October 2020**.
+The lectures will **start on Monday, 4th October 2020**.
 
 
-|           | 11.00 - 11.55  | 12.00 - 12.55 | | 14.00 - 14.55 | 15.00 - 16.00 |
-| --------- | ---------- | ----------- | - |----------- | ----------- |
-| Wednesday |            |             | | first part  | second part |
-| Friday    | first part | second part | | lab         | lab         |
+|           | 11.00 - 11.55  | 12.00 - 12.55 | | 16.00 - 16.55 | 17.00 - 17.55 |
+| --------- | -------------- | ------------- | |-------------- | ------------- |
+| Monday    |                |               | |   first part  |  second part  |
+| Tuesday   | first part     | second part   | |     |    |
+| Thursday  | first part     | second part   | |     |    |
+| Friday    | first part     | second part   | |     |    |
 
 
 

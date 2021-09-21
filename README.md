@@ -1,5 +1,5 @@
-# Foundations of HPC, 2020/2021
-This repository collects the materials from the course "Foundations of HPC" at Data Science and Scientific Computer, University of Trieste, year 2020/2021
+# Foundations of HPC, 2021/2022
+This repository collects the materials from the course "Foundations of HPC" at Data Science and Scientific Computer, University of Trieste, year 2021/2022
 
 Teachers:
 
@@ -8,7 +8,7 @@ Teachers:
 **Luca Tornatore**, INAF - National Institute for Astrophysics, Astronomical Observatory of Trieste
 
 Lab session are helped by:
-**Dott. Antonio Ragagnin**, INAF - National Institute for Astrophysics, Astronomical Observatory of Trieste
+TBD
 
 ------
 

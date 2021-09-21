@@ -43,6 +43,7 @@ The lectures will **start on Monday, 4th October 2020**.
 | Tuesday   | first part     | second part   | |     |    |
 | Thursday  | first part     | second part   | |     |    |
 | Friday    | first part     | second part   | |     |    |
+| --------- | -------------- | ------------- | |-------------- | ------------- |
 
 
 

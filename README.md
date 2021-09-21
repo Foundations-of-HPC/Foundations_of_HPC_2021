@@ -73,18 +73,18 @@ If the either the two assignments will not have been submitted, or they are not 
 
 | DATE        | LECTURES                                                     | TUTORIALS                                            | ASSIGMENTS                                           |
 | :---------- | :----------------------------------------------------------- | :--------------------------------------------------- | :--------------------------------------------------- |
-| Mon, Oct 4  | [1] [Introduction to course/ introduction to HPC](day01/README.MD)              |                                                      |                                                      |
-| Tue, Oct 5  | [2] [Introduction to HPC: part 2](day02/README.MD)                                 |                                                      |                                                      |
-| Thu, Oct 7 | [3] [HPC Hardware and parallel computing](day03/README.MD)                      |                                                      |                                                      |
-| Fri, Oct 8  | [4]   [HPC Software stack and tools](day04/README.MD)                             |                       |   |
-| Mon, Oct 11 |  |      [1] Using an HPC infrastructure                                                |                                                      |
-| Tue, Oct 12 | [5] Single Core Optimization (SCO) / 1<br />*Modern Architecture + Opt. Intro + Stack & Heap + Memory allocation* |                                 |                                                      |
-| Thu, Oct 14 | [6] SCO / 2<br />*How to use the Compiler + Cache hierarchy*                                   |                                                      |                                                      |
-| Fri, Oct 15 |  [7] SCO / 3<br />*loops*             |                             |                                                      |
-| Mon, Oct  18  |             |         [2] Tools for profiling                                               |                                                      |
-| Tue, Oct 19  | [8] SCO / 4<br />*Pipelines +branch predictions*                                |                                |                                                      |
-| Thu, Oct 21 |[9] SCO / 5<br />*Prefetching + vectorization*                                               |                                                      |                                                      |
-| Fri, Oct 22 |                                                   | [3] Debugging                                |                   |
+| Mon, Oct 4  | [1] [Introduction to course/ introduction to HPC](Intro/README.MD)              |                                                      |                                                      |
+| Tue, Oct 5  | [2] [Introduction to HPC: part 2](Intro/README.MD)                                 |                                                      |                                                      |
+| Thu, Oct 7 | [3] [HPC Hardware and parallel computing](Intro/README.MD)                      |                                                      |                                                      |
+| Fri, Oct 8  | [4]   [HPC Software stack and tools](Intro/README.MD)                             |                       |   |
+| Mon, Oct 11 |  |      [1] [Using an HPC infrastructure](Intro/README.md)                                                |                                                      |
+| Tue, Oct 12 | [5] [Single Core Optimization (SCO) / 1<br />*Modern Architecture + Opt. Intro + Stack & Heap + Memory allocation*](SCO/README.md) |                                 |                                                      |
+| Thu, Oct 14 | [6] [SCO / 2<br />*How to use the Compiler + Cache hierarchy*](SCO/README.md) |                                                      |                                                      |
+| Fri, Oct 15 |  [7] [SCO / 3<br />*loops*](SCO/README.md)  |                             |                                                      |
+| Mon, Oct  18  |             |         [2] [Tools for profiling](SCO/README.md)                                               |                                                      |
+| Tue, Oct 19  | [8] [SCO / 4<br />*Pipelines +branch predictions*](SCO/README.md)                                |                                |                                                      |
+| Thu, Oct 21 |[9] [SCO / 5<br />*Prefetching + vectorization*](SCO/README.md)                                               |                                                      |                                                      |
+| Fri, Oct 22 |                                                   | [3] [Debugging](SCO/README.md)                                |                   |
 | Mon, Oct  25 |[10] [Message Passing and intro to MPI programming](day11/README.MD)                                               |                                                      |                                                      |
 | Tue, Oct 26 | [11] [Again on MPI programming](day12/README.MD)                                            |                             |                   |
 | Thu, Oct 28 | [12] [domain decomposition with MPI](day15/README.MD)                                                 |                                                      |                                                      |

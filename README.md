@@ -104,7 +104,7 @@ If the either the two assignments will not have been submitted, or they are not 
 | Thu, Nov 25 | [23] [Benchmarking HPC systems](Libraries/README.MD) |   |   |
 | Fri, Nov 26 |   |      [8] [Exercises on benchmarking](Libraries/README.md) |  |
 | Mon, Nov 29 | [24] [Parallel Storage](ParallelStorage/README.MD)   |   |   |
-| Tue, Nov 30 | [25] [Parallel FS](day24/README.MD)(ParallelStorage/README.MD)  |    |   |
+| Tue, Nov 30 | [25] [Parallel FS](ParallelStorage/README.MD)  |    |   |
 | Thu, Dec 2 |  [26] [Parallel I/O](ParallelStorage/README.MD)    |    |      |
 | Fri, Dec 3 |                                |       [9] [exercise on parallel I/O](ParallelStorage/README.md)  |    |
 | Mon, Dec 6 | [27]  [roof model + parallel performance analysis /1](PerformanceAnalysis/README.md)    |       |                                                      |

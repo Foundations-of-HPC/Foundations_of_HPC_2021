@@ -108,11 +108,11 @@ If the either the two assignments will not have been submitted, or they are not 
 | Thu, Dec 2 |  [26] [Parallel I/O](ParallelStorage/README.MD)    |    |      |
 | Fri, Dec 3 |                                |       [9] [exercise on parallel I/O](ParallelStorage/README.md)  |    |
 | Mon, Dec 6 | [27]  [roof model + parallel performance analysis /1](PerformanceAnalysis/README.md)    |       |                                                      |
-| Tue, Dec 7 | [28]  [parallel performance analysis /2](PerformanceAnalysis/README.md)    |      |     |
-| Thu, Dec 9 | [29]  [parallel performance analysisscalasca](PerformanceAnalysis/README.md)  |     |
-| Fri, Dec 10 |                                 |    [10] [exercise parallel performance analysis](PerformanceAnalysis/README.md) |
-| Mon, Dec 13 | [30][GPU programming/1](GPU/README.MD)                                |                                                      |
-| Tue, Dec 14 | [31][GPU programming/2](GPUREADME.MD)                                     |                                                      |
+| Tue, Dec 7 | [28]  [Parallel Performance Analysis /2](PerformanceAnalysis/README.md)    |      |     |
+| Thu, Dec 9 | [29]  [Parallel Performance Analysisscalasca](PerformanceAnalysis/README.md)  |     |
+| Fri, Dec 10 |                                 |    [10] [exercise on parallel performance analysis](PerformanceAnalysis/README.md) |
+| Mon, Dec 13 | [30] [GPU programming/1](GPU/README.md)                                |                                                      |
+| Tue, Dec 14 | [31] [GPU programming/2](GPUREADME.md)                                     |                                                      |
 | Thu, Dec 16 |                                |  [11] [exercises on GPU](GPU/README.md)                                          |
 | Fri, Dec 17 | [32]  TBD                               |                                                      |
 

@@ -110,10 +110,10 @@ If the either the two assignments will not have been submitted, or they are not 
 | Mon, Dec 6 | [27]  [roof model + parallel performance analysis /1](PerformanceAnalysis/README.md)    |       |                                                      |
 | Tue, Dec 7 | [28]  [parallel performance analysis /2](PerformanceAnalysis/README.md)    |      |     |
 | Thu, Dec 9 | [29]  [parallel performance analysisscalasca](PerformanceAnalysis/README.md)  |     |
-| Fri, Dec 10 |                                 |     | [10] [exercise parallel performance analysis](PerformanceAnalysis/README.md) 
+| Fri, Dec 10 |                                 |    [10] [exercise parallel performance analysis](PerformanceAnalysis/README.md) |
 | Mon, Dec 13 | [30][GPU programming/1](GPU/README.MD)                                |                                                      |
 | Tue, Dec 14 | [31][GPU programming/2](GPUREADME.MD)                                     |                                                      |
-| Thu, Dec 16 |                                |  [32] [exercises on GPU](GPU/README.md)                                          |
+| Thu, Dec 16 |                                |  [11] [exercises on GPU](GPU/README.md)                                          |
 | Fri, Dec 17 | [32]  TBD                               |                                                      |
 
 #### PRACTICAL ADVICES

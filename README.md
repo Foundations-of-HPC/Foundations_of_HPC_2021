@@ -88,18 +88,18 @@ If the either the two assignments will not have been submitted, or they are not 
 | Mon, Oct  25 |[10] [Message Passing and intro to MPI programming](MPI/README.md)                                               |                                                      |                                                      |
 | Tue, Oct 26 | [11] [Again on MPI programming](MPI/README.md)                                            |                             |                   |
 | Thu, Oct 28 | [12] [domain decomposition with MPI](MPI/README.md)                                                 |                                                      |                                                      |
-|Fri, Oct 29  |                        |  [4] [Exercises on MPI](MPI/README.md)                                 |                                                      |
+|Fri, Oct 29  |                        |  [4] [Exercises on MPI](MPI/README.md)  |   [Assignment 1](Assignment1/README.md) |
 | Thu, Nov 4  | [13] [Network Hardware and Performance Model](MPI/README.md)                                             |                                                      |                                                      |
 | Fri, Nov 5  | [14] [Performance Model](MPI/README.md)                                              | [5] [``short tutorial on measuring MPI performance on ORFEO nodes](MPI/README.md)                             |                                                      |
 | Mon, Nov 8  |  [15] [OpenMP / 1](OpenMP/README.md)                                           |                                                      |                                                      |
-| Tue, Nov 9 | [16] [OpenMP / 2](OpenMP/README.md)                                              |                     | [4] + [5] Assigments on MPI and OpenMP  *(3 weeks)*  |                                                      |
+| Tue, Nov 9 | [16] [OpenMP / 2](OpenMP/README.md)                                              |                     |   |                                                      |
 | Thu, Nov 11 | [17] [OpenMP / 3](OpenMP/README.md)              |  |                         |
 | Fri, Nov 12  |              |  [6] [Exercises on OpenMP](OpenMP/README.md)                                                |                                                      |
 | Mon, Nov 15 | [18] [OpenMP / 4](OpenMP/README.md)                                  |                                                   |                                                      |
 | Tue, Nov 16 | [19] [OpenMP / 5](OpenMP/README.md)           |                                 | |
 | Thu, Nov 18 | [20] [OpenMP / 6](OpenMP/README.md)                                |                                                      |                                                      |
-| Fri, Nov 19 |                         |            [7] [Exercises on openMP](OpenMP/README.md)                                            |                                                      |
-| Mon, Nov 22 | [21] [MPI libraries](Libraries/README.MD)                                |                                                      |                                                      |
+| Fri, Nov 19 |                         |            [7] [Exercises on openMP](OpenMP/README.md)   |   [Assigment 2](Assignment2/README.md) |
+| Mon, Nov 22 | [21] [MPI libraries](Libraries/README.MD) |   |
 | Tue, Nov 23 | [22] [Parallel HPC libraries](Libraries/README.MD)   |   |   |
 | Thu, Nov 25 | [23] [Benchmarking HPC systems](Libraries/README.MD) |   |   |
 | Fri, Nov 26 |   |      [8] [Exercises on benchmarking](Libraries/README.md) |  |

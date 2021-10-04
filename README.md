@@ -45,6 +45,9 @@ The lectures will **start on Monday, 4th October 2020**.
 | Friday    | first part     | second part   |                |               |
 
 
+###### Units's Microsoft Teams
+Following this link you should be able to join the Teams
+https://teams.microsoft.com/l/channel/19%3a6HsghqYmJTd3mXlRuhDl9EZV5vX9imECoBk8VBWbQXk1%40thread.tacv2/General?groupId=3527aaf0-a200-48d3-ab06-51219e0c6086&tenantId=a54b3635-128c-460f-b967-6ded8df82e75
 
 ###### Contact details:
 

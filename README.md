@@ -74,12 +74,12 @@ If the either the two assignments will not have been submitted, or they are not 
 
 #### CALENDAR
 
-| DATE        | LECTURES                                                     | TUTORIALS                                            | ASSIGMENTS                                           |
+| DATE        | LECTURES                                                     | TUTORIALS                                            | ASSIGNEMENTS                                           |
 | :---------- | :----------------------------------------------------------- | :--------------------------------------------------- | :--------------------------------------------------- |
 | Mon, Oct 4  | [1] [Introduction to course/ introduction to HPC](Intro/README.MD)              |                                                      |                                                      |
-| Tue, Oct 5  | [2] [Introduction to HPC: part 2](Intro/README.MD)                                 |                                                      |                                                      |
-| Thu, Oct 7 | [3] [HPC Hardware and parallel computing](Intro/README.MD)                      |                                                      |                                                      |
-| Fri, Oct 8  | [4]   [HPC Software stack and tools](Intro/README.MD)                             |                       |   |
+| Tue, Oct 5  | [2] [Introduction to HPC: part 2](Intro/README.MD)  /       [3] [HPC Hardware and HPC software stack and tools](Intro/README.MD)                                 |                                                      |                                                      |
+| Thu, Oct 7 | [4] [Parallel computing concepts](Intro/README.MD)                      |                                                      |                                                      |
+| Fri, Oct 8  |                              |                       | [Assignment 0: enable your account on ORFEO ](Intro/README.MD)   | 
 | Mon, Oct 11 |  |      [1] [Using an HPC infrastructure](Intro/README.md)                                                |                                                      |
 | Tue, Oct 12 | [5] [Single Core Optimization (SCO) / 1<br />*Modern Architecture + Opt. Intro + Stack & Heap + Memory allocation*](SCO/README.md) |                                 |                                                      |
 | Thu, Oct 14 | [6] [SCO / 2<br />*How to use the Compiler + Cache hierarchy*](SCO/README.md) |                                                      |                                                      |

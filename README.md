@@ -137,7 +137,7 @@ Available at ICTP library Authors: Thomas Sterling Matthew Anderson Maciej Brodo
 Some of the materials of this book are presented during some lectures.
 
 ##### Ref 2: Introduction to High-Performance Scientific Computing,by Victor Eijkhout
-The source and pdf of the book (as well as lecture slides) can be found in this repository: https://bitbucket.org/VictorEijkhout/hpc-book-and-course 10.5281/zenodo.49897
+The source and pdf of the book (as well as lecture slides) can be found at this link: https://pages.tacc.utexas.edu/~eijkhout/istc/istc.html, DOI: 10.5281/zenodo.49897
 
 Some of the materials presented in classes are taken from this book.
 

@@ -28,8 +28,8 @@ Let's start talking about HPC in present and future days
 date: Tuesday 05/10/2020
 
 ### lectures
- - Stefano Cozzini : [introduction to HPC-part2](lecture02-intro-to-HPC.pdf)
- - Stefano Cozzini : [HPC software stack ](lecture03-HPC-software-stack.pdf)
+ - Stefano Cozzini : [introduction to HPC-part2](lecture02-intro-toHPC-part2.pdf)
+ - Stefano Cozzini : [HPC software stack ](lecture03-HPCsoftware-stack.pdf)
 
 ### references
   

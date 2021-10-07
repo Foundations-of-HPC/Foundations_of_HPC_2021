@@ -56,7 +56,15 @@ To learn how to generate a private/public keys on windows here a link: https://w
 
 ###### Units's Microsoft Teams
 Link for today lecture 
+
+https://teams.microsoft.com/l/meetup-join/19:6HsghqYmJTd3mXlRuhDl9EZV5vX9imECoBk8VBWbQXk1@thread.tacv2/1633597669320?context=%7B%22Tid%22:%22a54b3635-128c-460f-b967-6ded8df82e75%22,%22Oid%22:%22d7c26965-1813-464f-b1dd-239b179a37e8%22%7D
+
+
 https://teams.microsoft.com/l/meetup-join/19:6HsghqYmJTd3mXlRuhDl9EZV5vX9imECoBk8VBWbQXk1@thread.tacv2/1633425160106?context=%7B%22Tid%22:%22a54b3635-128c-460f-b967-6ded8df82e75%22,%22Oid%22:%22d7c26965-1813-464f-b1dd-239b179a37e8%22%7D
+
+#### slack Channel link:
+
+https://join.slack.com/t/fhpc2021/shared_invite/zt-wp3dpcsn-CtRi3ICKavfjWiisEdPXWg
 
 ###### Contact details:
 

@@ -3,12 +3,12 @@ This repository collects the materials from the course "Foundations of HPC" at D
 
 Teachers:
 
-**Stefano Cozzini**, Area di Ricerca, Trieste
+**Stefano Cozzini**, Area Science Park, Trieste
 
 **Luca Tornatore**, INAF - National Institute for Astrophysics, Astronomical Observatory of Trieste
 
-Lab session are helped by:
-TBD
+Lab session are helped by: Federico Barone, Area Science Park, Trieste
+
 
 ------
 
@@ -43,6 +43,15 @@ The lectures will **start on Monday, 4th October 2020**.
 | Tuesday   | first part     | second part   |                |               |
 | Thursday  | first part     | second part   |                |               |
 | Friday    | first part     | second part   |                |               |
+
+
+##### HOw to get an account on ORFEO
+
+Please fill in with your details this google table:
+
+https://docs.google.com/spreadsheets/d/1UFZMffMRBDp-tXRxOwdH2rzRGyib6-ZpeFguXleTEEA/edit#gid=1853927763
+
+To learn how to generate a private/public keys on windows here a link: https://www.maketecheasier.com/generate-ssh-public-private-keys-windows/
 
 
 ###### Units's Microsoft Teams

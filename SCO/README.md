@@ -13,6 +13,6 @@ This series of lectures is about code optimization on single-core.
 
 ### Further readings _(optional, but useful)_
 
-*  [What ever computer programmer should know about memory](materials/What every computer programmer should know about memory.pdf)
-*  [What ever computer scientist should know about floating point arithmetics](materials/What every computer scientist should know about floating-point.pdf)
+*  [What ever computer programmer should know about memory](materials/What_every_computer_programmer_should_know_about_memory.pdf)
+*  [What ever computer scientist should know about floating point arithmetics](materials/What_every_computer_scientist_should_know_about_floating-point.pdf)
 

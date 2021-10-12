@@ -1,0 +1,26 @@
+#!/bin/bash
+
+declare -a options=("a" "b" "c")
+declare -a compiler=("gcc" "icc" "pgcc")
+declare -a cstd=("-std=c11" "-std=c11" "-c11")
+declare -a optimization=("-O3 -march=native" "-O3 -fast -xHost" "-O4 -fast")
+
+length=${#compiler[@]}
+
+for (( i=0 ; i<$length; i++ ));
+do
+    CC=${compiler[$i]};
+    $CC >& /dev/null
+
+    if [[ $? == 127 ]]; then continue; fi   # this compiler does not exist
+
+    echo "- compiling with "$CC
+    
+    if [ ! -d $CC ]; then mkdir $CC; fi
+
+    for (( o=0; o<${#options[@]}; o++));
+    do
+	$CC ${cstd[$i]} -o $CC/pointers_aliasing_${options[$o]} pointers_aliasing_${options[$o]}.c
+	$CC ${cstd[$i]} ${optimization[$i]} -o $CC/pointers_aliasing_${options[$o]}.O  pointers_aliasing_${options[$o]}.c
+    done
+done

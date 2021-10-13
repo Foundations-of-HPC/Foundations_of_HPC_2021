@@ -32,11 +32,11 @@ void demo( size_t N )
 int main( void )
 {
   
-  printf("reported usabe_size for 1B allocated: %zu \n", USABLE_SIZE(malloc(1)));
-  printf("reported usabe_size for 4B allocated: %zu \n", USABLE_SIZE(malloc(4)));
-  printf("reported usabe_size for 8B allocated: %zu \n", USABLE_SIZE(malloc(8)));
-  printf("reported usabe_size for 16B allocated: %zu \n", USABLE_SIZE(malloc(16)));
-  printf("reported usabe_size for 32B allocated: %zu \n", USABLE_SIZE(malloc(32)));
+  printf("reported usable_size for 1B allocated: %zu \n", USABLE_SIZE(malloc(1)));
+  printf("reported usable_size for 4B allocated: %zu \n", USABLE_SIZE(malloc(4)));
+  printf("reported usable_size for 8B allocated: %zu \n", USABLE_SIZE(malloc(8)));
+  printf("reported usable_size for 16B allocated: %zu \n", USABLE_SIZE(malloc(16)));
+  printf("reported usable_size for 32B allocated: %zu \n", USABLE_SIZE(malloc(32)));
   
   for( size_t N = 10; N < 100000000; N *= 10 )
     demo(N);

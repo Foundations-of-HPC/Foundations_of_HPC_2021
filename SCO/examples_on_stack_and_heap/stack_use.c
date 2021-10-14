@@ -304,7 +304,7 @@ int main ( int argc, char **argv )
   else if ( run == 3 )
     access_the_heap_dp ( );
 
-  else {
+
     
     char *func_1_stmt = function_1( );
     
@@ -313,7 +313,7 @@ int main ( int argc, char **argv )
     
     function_2 ( sentence_ptr );
     
-    printf("\n"); }
+    printf("\n"); 
   
   return 0;
 }

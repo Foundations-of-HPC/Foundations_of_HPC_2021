@@ -231,6 +231,7 @@ char * function_1 ( void )
   // will make the compiler warning that you are
   // missing some fundamental point..
   return my_statement;
+ #warning ^^ you should get a warning from the compiler at this point, which is intended
 }
 
 
@@ -303,14 +304,16 @@ int main ( int argc, char **argv )
   else if ( run == 3 )
     access_the_heap_dp ( );
 
-  char *func_1_stmt = function_1( );
-
-  // this line will end with a not-so-surprising result
-  printf ( "function_1()'s statement as seen from main(): %s\n", func_1_stmt);
-  
-  function_2 ( sentence_ptr );
-
-  printf("\n");
+  else {
+    
+    char *func_1_stmt = function_1( );
+    
+    // this line will end with a not-so-surprising result
+    printf ( "function_1()'s statement as seen from main(): %s\n", func_1_stmt);
+    
+    function_2 ( sentence_ptr );
+    
+    printf("\n"); }
   
   return 0;
 }

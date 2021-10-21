@@ -70,8 +70,9 @@ int main ( int argc, char **argv )
 	{
 	  double x  = drand48();                      /* draw 2 pseudo-rnd in [0,1]       */
 	  double y  = drand48();
-	  
-	  shot_in += ( (x*x + y*y) < 1.0 );
+	      
+	  if( (x*x + y*y)  < 1.0 )
+	    shot_in++;
 	}
 
       double elapsed = CPU_TIME - tstart;

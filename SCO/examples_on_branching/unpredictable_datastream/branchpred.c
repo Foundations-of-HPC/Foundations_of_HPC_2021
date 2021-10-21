@@ -99,8 +99,7 @@ int main(int argc, char **argv)
             sum += ~t & data[ii];
 
 #elif defined( BESMART2 )
-	    int acc = (data[ii]>PIVOT)? data[ii] : 0;
-	    sum += acc;
+	    sum += (data[ii]>PIVOT)*data[ii];
 #endif
           }
       }
@@ -112,11 +111,15 @@ int main(int argc, char **argv)
 #endif
   
   free(data);
-  
+
+ #if !defined(WOW)
   printf("\nsum is %llu, elapsed seconds: %g\n", sum, tstop - tstart);
 
-#ifdef WOW
-  printf("(in total: %g seconds)\n", tot_tstop - tot_tstart);
+#else
+  double tot_time  = tot_tstop - tot_tstart;
+  double loop_time = tstop - tstart;
+  printf("\nsum is %llu, elapsed seconds: %g, %g in loop and %g in qsort\n",
+	 sum, tot_time, loop_time, tot_time - loop_time);
 #endif
 
   printf("\n");

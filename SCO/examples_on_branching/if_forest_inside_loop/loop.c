@@ -85,7 +85,7 @@ void F_111(double *R, int i)
 
 
 #define mode_default  0
-#define top_default   1000000
+#define top_default   20000000
 #define case1_default 1
 #define case2_default 1
 #define case3_default 1

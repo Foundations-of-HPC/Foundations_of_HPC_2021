@@ -83,7 +83,8 @@ int main(int argc, char **argv)
       
       /* now load the data in the highest cache level that fits */
       for ( int n = 0; n < size; n++) array[n] = (double)1.0;
-      
+
+      retval = PAPI_reset(PAPI_EventSet); PCHECK(retval);
       retval = PAPI_start(PAPI_EventSet); PCHECK(retval);
 
       /* run the experiment */

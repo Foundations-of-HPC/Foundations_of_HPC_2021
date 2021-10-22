@@ -73,6 +73,9 @@ if( retval == PAPI_OK ) {						\
     for( int jj = 0; jj < PAPI_EVENTS_NUM; jj++)	\
       papi_values[jj] = papi_buffer[ jj] = 0; }
 
+#define PAPI_RESET {						\
+    int retval = PAPI_reset( papi_EventSet ); PAPI_WARN(retval, "resetting set");}
+
 
 #else                                                           // -----------------------------------------------------------
 
@@ -82,5 +85,5 @@ if( retval == PAPI_OK ) {						\
 #define PAPI_STOP_CNTR
 #define PAPI_FLUSH
 #define PAPI_GET_CNTR( i ) 0
-
+#define PAPI_RESET
 #endif                                                          // -----------------------------------------------------------

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+for f in prefetching2.v?.c;
+do
+    version=$( echo $f | cut -d'.' -f2 | cut -d'v' -f2)
+    echo "compiling prefetching2.vall.c -> " prefetching2.v$version
+    if [[ "$version" > 0 ]];
+    then
+	gcc -std=c11 -DUSE_PAPI -o prefetching2.v$version prefetching2.vall.c -DPREFETCH=$version -lpapi -lm
+	gcc -std=c11 -DUSE_PAPI -O3 -march=native -o prefetching2.v$version.O3n prefetching2.vall.c -DPREFETCH=$version -lpapi -lm
+    else
+	gcc -std=c11 -DUSE_PAPI -o prefetching2.v0 prefetching2.v0.c -lpapi -lm
+	gcc -std=c11 -DUSE_PAPI -O3 -march=native -o prefetching2.v0.O3n prefetching2.v0.c -lpapi -lm
+    fi
+done

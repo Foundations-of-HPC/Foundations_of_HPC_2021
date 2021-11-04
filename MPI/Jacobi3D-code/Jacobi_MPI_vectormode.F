@@ -1,6 +1,7 @@
       PROGRAM JacobiMPI
       IMPLICIT NONE
-
+!!  taken from https://blogs.fau.de/hager/hpc-book#samplecode
+!!  sligghtly modify to run as pure MPI code 
       include 'mpif.h'
       integer myid, numprocs, ierr, myid_grid, nump_grid
 
@@ -87,7 +88,7 @@ c         pbc_check(3) = .false.
 
       if(GRID_COMM_WORLD .eq. MPI_COMM_NULL) goto 999
 
-      write(*,*)myid,GRID_COMM_WORLD, MPI_COMM_NULL
+      write(*,*) myid,GRID_COMM_WORLD, MPI_COMM_NULL
 
 C
 C     Get MPI Rank
@@ -186,7 +187,7 @@ C
 
       real*8 tmp, residual
 
-
+      character*20 filename
 
       call InitBufferDims(1,loca_dim(1),1,loca_dim(2),1,loca_dim(3)
      $     ,totmsgsize,sendmsg,recvmsg,MaxBufLen)
@@ -202,6 +203,8 @@ C
       
       call MPI_CART_COORDS(GRID_COMM_WORLD, myid_grid, 3 , mycoord ,ierr)
 
+      write(filename,"('task.',i0.2, '.dat')") myid_grid
+      open (42+myid_grid, file=filename , status='unknown') 
       write(42+myid_grid,'(a,i4,a,3(i2,x),4x,3(i4,x))') "# ",myid_grid, 
      $     " Coordinates ",
      $     (mycoord(i),i=1,n_dim),kEnd,jEnd,iEnd
@@ -211,10 +214,11 @@ C
       do i=1,n_dim
          my_offset(i) = (spat_dim(i) / proc_dim(i)) * mycoord(i)
       enddo
+C     
       write(42+myid_grid,'(a,i4,a,3(i6,x))') "# ",myid_grid, 
      $     " Offsets ",
      $     (my_offset(i),i=1,n_dim)
-      
+      close(42+myid_grid)
 C
 C     Initialize
 C

@@ -9,6 +9,8 @@ A collection of materials/references for the MPI lectures
  - lecture 5: [Message Passing and MPI programming](lecture05-on-MPI-programming.pdf)
  - lecture 6: [Collective operation and virtual topology](lecture06-Collective-MPI-virtual-topology.pdf)
  - lecture 7: [domain decomposition with MPI](lecture07-Domain-Decomposition-with-MPI.pdf)
+ - lecture 8: [Network basic for MPI applications](lecture08-Network-basics-for-MPI-application.pdf)
+ 
 
 
 ### Main references for MPI lectures: 

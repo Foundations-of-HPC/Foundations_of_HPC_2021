@@ -1,0 +1,32 @@
+[MPI process 4] I am .
+[MPI process 10] I am .
+[MPI process 12] I am .
+[MPI process 0] I am .
+[MPI process 3] I am .
+[MPI process 6] I am .
+[MPI process 8] I am .
+[MPI process 9] I am .
+[MPI process 14] I am .
+[MPI process 15] I am .
+[MPI process 1] I am .
+[MPI process 2] I am .
+[MPI process 11] I am .
+[MPI process 13] I am .
+[MPI process 5] I am .
+[MPI process 7] I am .
+[MPI process, old 12, new 12] I am located at (3, 0).
+[MPI process, old 15, new 15] I am located at (3, 3).
+[MPI process, old 1, new 1] I am located at (0, 1).
+[MPI process, old 0, new 0] I am located at (0, 0).
+[MPI process, old 13, new 13] I am located at (3, 1).
+[MPI process, old 3, new 3] I am located at (0, 3).
+[MPI process, old 5, new 5] I am located at (1, 1).
+[MPI process, old 6, new 6] I am located at (1, 2).
+[MPI process, old 8, new 8] I am located at (2, 0).
+[MPI process, old 4, new 4] I am located at (1, 0).
+[MPI process, old 2, new 2] I am located at (0, 2).
+[MPI process, old 10, new 10] I am located at (2, 2).
+[MPI process, old 11, new 11] I am located at (2, 3).
+[MPI process, old 9, new 9] I am located at (2, 1).
+[MPI process, old 14, new 14] I am located at (3, 2).
+[MPI process, old 7, new 7] I am located at (1, 3).

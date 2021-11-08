@@ -75,7 +75,7 @@ typedef unsigned long long int ull;
    :                                                                :
    :--------------------------------------------------------------- : */
 
-void insert( double *, double, int, int);
+void insert( double *, double, int );
 __attribute__((optimize(0))) double estimate_timing_overhead( );
 __attribute__((optimize(0))) double estimate_loop0_toverhead(int, int, int, double );
 __attribute__((optimize(0))) void   estimate_loop0_poverhead(int, int, int, ull *);
@@ -219,13 +219,12 @@ int main(int argc, char **argv)
 		array[k] = k;
 
 	      // ...................
-	      // prepare variables used
-	      // for the unrolling
+	      // prepare the variables
+	      // used for the unrolling
 	      //
 	      int off2 = stride + stride;
 	      int off3 = off2 + stride;
 	      int off4 = off2 + off2;
-	      int end = size - off4;
 
 	      // ...................
 	      // take the initial time
@@ -250,8 +249,6 @@ int main(int argc, char **argv)
 		    acc1 += array[k+stride];
 		    acc2 += array[k+off2];
 		    acc3 += array[k+off3]; }
-		  /* for ( int k = end; k < size; k += stride ) */
-		  /*   acc0 += array[k]; */
 		}
 
 	      PAPI_STOP_CNTR;                                  // stop the counters
@@ -298,7 +295,7 @@ int main(int argc, char **argv)
 		// insert the current timing in the 10-best
 		// array with an insertion sort
 		//
-		insert( elapsed, this_time, N_TIMINGS, repetitions );
+		insert( elapsed, this_time, N_TIMINGS );
 	      
 	      repetitions++;
 	    }
@@ -316,14 +313,16 @@ int main(int argc, char **argv)
 	  // to estimate the inner loop timing
 	  //
 	  double time_elapsed = 0;
-	  for( int k = 0; k < N_TIMINGS; k++ )
-	    time_elapsed += elapsed[k];
+	  int    how_many_timings = 0;
+	  for( int k = 0; k < N_TIMINGS; k++ ) {
+	    how_many_timings += (elapsed[k] < DBL_MAX);
+	    time_elapsed += (elapsed[k] < DBL_MAX) * elapsed[k]; }
 
 	  // +++++++++++++++++++++++++++
 	  // get the timing per processed element
 	  //
 	  double n_el = (double)(size/stride);
-	  double t_per_el = time_elapsed/N_TIMINGS/ n_el;
+	  double t_per_el = time_elapsed / how_many_timings / n_el;
 	  printf(" elapsed time is %g sec (%d repetitions, ~%g sec/element)\n",
 		 tot_elapsed, repetitions, t_per_el );
 	  //
@@ -480,7 +479,7 @@ __attribute__((optimize(0))) double estimate_timing_overhead( )
       t2 = CPU_TIME;
       t3 = CPU_TIME;
     }
-  double overhead1 = (CPU_TIME - tstart)/(MANY_ITER*8+2);
+  double overhead1 = (CPU_TIME - tstart)/(MANY_ITER*8+1);
 
   double overhead2 = 0;
   for( unsigned int j = 0; j < MANY_ITER; j++ )
@@ -498,7 +497,7 @@ __attribute__((optimize(0))) double estimate_timing_overhead( )
       t1 = CPU_TIME;
       overhead2 += t1-t0;
     }
-  overhead2 /= (MANY_ITER*8);
+  overhead2 /= (MANY_ITER*8+1);
   
  #undef MANY_ITER
 
@@ -517,10 +516,7 @@ __attribute__((optimize(0))) double estimate_loop0_toverhead(int N, int size, in
  #if defined(USE_PAPI)    
   long double values[PAPI_EVENTS_NUM];
  #endif
-  int off2 = stride + stride;
-  int off3 = off2 + stride;
-  int off4 = off2 + off2;
-  int end = size - off4;
+  int off4 = stride*4;
   
   double tstart = CPU_TIME;
   for( int k = 0; k < MANYLOOPS; k++ )
@@ -531,10 +527,8 @@ __attribute__((optimize(0))) double estimate_loop0_toverhead(int N, int size, in
 	{
 	  ull acc0 = 0, acc1 = 0, acc2 = 0, acc3 = 0;
 	  	  
-	  for ( int k = 0; k < end; k+=off4 ) {
+	  for ( int k = 0; k < size; k+=off4 ) {
 	    acc0++; acc1++; acc2++; acc3++;}
-	  for( int k = end; k < size; k++ )
-	    acc0++;
 	}
       PAPI_STOP_CNTR;
      #if defined(USE_PAPI)    
@@ -557,10 +551,7 @@ __attribute__((optimize(0))) void estimate_loop0_poverhead(int N, int size, int 
  #define MANYLOOPS 100
 
   long double values[PAPI_EVENTS_NUM] = {0};
-  int off2 = stride + stride;
-  int off3 = off2 + stride;
-  int off4 = off2 + off2;
-  int end = size - off4;
+  int off4 = stride * 4;
   
   PAPI_FLUSH;
   PAPI_START_CNTR;
@@ -569,10 +560,8 @@ __attribute__((optimize(0))) void estimate_loop0_poverhead(int N, int size, int 
       for ( int j = 0; j < N; j++ )
 	{
 	  ull acc0 = 0, acc1 = 0, acc2 = 0, acc3 = 0;
-	  for ( int k = 0; k < end; k+=off4 ) {
+	  for ( int k = 0; k < size; k+=off4 ) {
 	    acc0++; acc1++; acc2++; acc3++;}
-	  for( int k = end; k < size; k++ )
-	    acc0++;
 	}
       for ( int k = 0; k < PAPI_EVENTS_NUM; k++ ) values[k] += (long double)PAPI_GET_CNTR(k);	        
     }

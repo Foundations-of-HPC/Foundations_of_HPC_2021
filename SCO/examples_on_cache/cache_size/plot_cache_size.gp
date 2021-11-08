@@ -3,11 +3,13 @@ set terminal png size 2048,1600 enhanced
 set terminal png font "Garamond"
 set output "misses.png"
 
+
+if (!exists("infile")) infile="cache_size.dat"
+
 stats infile using 2:6 nooutput
 min_cpe=STATS_min_y
 max_cpe=STATS_max_y
 
-if (!exists("infile")) infile="cache_size.dat"
 
 set lmargin 24
 set rmargin 24

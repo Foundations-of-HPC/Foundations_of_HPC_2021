@@ -102,7 +102,7 @@ Provide a csv file for each measure with the following following format and prov
 
 ````
 
-Discuss in detail performance obtained. In particular discuss the difference in performance among different network ( infiniband vs gigsbit) and compare different implementations. Check if THIN and 
+Discuss in detail performance obtained. In particular discuss the difference in performance among different network (infiniband vs gigsbit) and compare different implementations. Check if THIN and GPU nodes are behaving the same way.
 
 ## Section 3 : Compare performance observed against performance model for Jacobi solver 
 

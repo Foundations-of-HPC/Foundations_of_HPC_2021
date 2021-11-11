@@ -39,7 +39,7 @@ where:
 ## Section  1: MPI programming 
 
 
--  implement in c or C++ an MPI program using P processors on a ring (i.e. a simple 1D topology where each processor  has a left and right neighbour). 
+1. implement in c or C++ an MPI program using P processors on a ring (i.e. a simple 1D topology where each processor  has a left and right neighbour). 
  The program should implement a stream of messages in both directions:
   -  as first step  P sends a message ( msgleft = rank ) to its left neighbour (P-1) and receives from its right neighbour (P+1) and send aother message ( msgright = -rank) to P+1 and receive from P-1.
   -  it then does enough iterations till all processors receive back the initial messages. At each iteration each processor add its rank to the received message if it comes from left, substracting if it comes from right. 
@@ -54,11 +54,16 @@ Take the time of the program using MPI_walltime routines and produce  a plot of 
 Model network performance and discuss scalability in term of the number of processors. 
 
 
--  implement a simple 3d matrix-matrix addition in parallel using a 1D,2D and 3D distribution of data using virtual topology and study its scalability in term of communication within a single THIN node. Use here just collective operations to communicate among MPI processes.
-Program should accept in input the sizes of the matrixes and should then allocate the matrix. 
-Model the network performance and try to identify which the best distribution given the topology of the node you are using for the following sizes:  2400 x 100 x 100 ; 1200 x 200 x 100 ; 800 x 300 x 100.
+2. implement a simple 3d matrix-matrix addition in parallel using a 1D,2D and 3D distribution of data using virtual topology and study its scalability in term of communication within a single THIN node. Use here just collective operations to communicate among MPI processes.
+Program should accept as input the sizes of the matrixes and should then allocate the matrix and initialize them using double precision random numbers.
+
+Model the network performance and try to identify which the best distribution given the topology of the node you are using for the following sizes:  
+ - 2400 x 100 x 100 ; 
+ - 1200 x 200 x 100 ; 
+ - 800 x 300 x 100; 
+
 Discuss performance for the three domains in term of 1D/2D/3D distribution keeping the number of processor constant at 24.
-Provide a table with all possible distribution on 2D and 3D partition and report the timing.
+Provide a table with all possible distribution on 1 D 2D and 3D partition and report the timing.
  
   
 
@@ -66,7 +71,7 @@ Provide a table with all possible distribution on 2D and 3D partition and report
 
 - Use the Intel MPI benchmark to estimate latency and bandwidth of all available combinations of topologies and networks on ORFEO computational nodes.  Use both IntelMPI and openmpi latest version libraries available on ORFEO.
 Report numbers/graph and also fit data obtained against the simple communication model we discussed. Compare estimated latency and bandwidth parameters against the one provided by a least-square fitting model. 
-Provide a csv file for each measure with the following following format and provide a graph (pdf and/or jpeg or any image format you like)
+Provide a csv file for each measure with the following format and provide a graph (pdf and/or jpeg or any image format you like)
 
 ```
 #header_line 1: command line used 
@@ -110,10 +115,14 @@ The application we are using here is a Jacobi application already discussed in c
 
 Steps to do:
 
-- Compile and run the code on on single processor of a thin node to estimate the serial time on one single core.
-- Run it on 4/8/12 processes pinning the MPI processes within the same socket, across two sockets and across two nodes.
-  Report and check scalability. 
-- Run it on  12 24 48 processor using two thin nodes and see if scalability fit what expected from the model.
-  Report and check the scalability 
-- Repeat the experiment on a GPU node where hyperthreading is enabled: check and discuss its role.
-  Report and check the scalability 
+- Compile and run the code on on single processor of a THIN and GPU node to estimate the serial time on one single core.
+- Run it on 4/8/12 processes within the same node pinning the MPI processes within the same socket and across two sockets 
+  	- Identify for the two cases the right latency and bandwith to use in the performance model. 
+  	- Report and check check if scalability fits the expected behaviour of the model discussed in class.
+- Run it on 12 24 48 processor using two thin nodes 
+	- Identify for this case the right latency and bandwith to use in the performance model. 
+  	- Report and check check if scalability fits the expected behaviour of the model discussed in class. 
+- Repeat the previous experiment on a GPU node where hyperthreading is enabled. 
+  	- Identify for this case the right latency and bandwith to use in the performance model.  
+  	- Report and check check if scalability fits the expected behaviour of the model discussed in class.
+  

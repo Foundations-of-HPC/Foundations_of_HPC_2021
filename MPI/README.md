@@ -10,12 +10,14 @@ A collection of materials/references for the MPI lectures
  - lecture 6: [Collective operation and virtual topology](lecture06-Collective-MPI-virtual-topology.pdf)
  - lecture 7: [domain decomposition with MPI](lecture07-Domain-Decomposition-with-MPI.pdf)
  - lecture 8: [Network basic for MPI applications](lecture08-Network-basics-for-MPI-application.pdf)
+ - lecture 9: [MPI libraries and performance ](lecture09-mpi-libraries-and-performance.pdf)
+ - lecture 10:[Performance model for MPI applications](lecture10-PerformanceEvaluationforMPI-applications.pdf)
  
 
 
 ### Main references for MPI lectures: 
- - chapter 9 of reference 4 is a nice and detailed introduction to MPI. The final section of the chapter is lecture 7 
- - exercises and tutorials all over the web:
+ - chapter 9 of reference 4 is a nice and detailed introduction to MPI. The final section of the chapter is lecture 7 and lecture 10.
+ - exercises and tutorials on  MPI are present all over the web. Here a couple of examples:
     - [Here a very good starting point]https://www.mcs.anl.gov/research/projects/mpi/tutorial/index.html)
     - [Another simple tutorial](https://mpitutorial.com/tutorials/)
     - 

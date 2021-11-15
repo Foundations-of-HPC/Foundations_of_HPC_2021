@@ -1,0 +1,1183 @@
+# Message catalog file required to replay XaoS tutorials in
+# Hungarian language
+#
+# Copyright (C) 1997 by Jan Hubicka
+#                             ,       ,
+# Hungarian translation by Kovacs Zoltan (kovzol@math.u-szeged.hu)
+# $Revision: 1.6 $
+#
+# This is a Latin2 encoded file
+#       ,           ,   , ,                                               ,,
+# Ez a fajl Latin2-kodolasu (Windowsban vagy Unixban/Linuxban szerkesztheto).
+# Ha módosítod, néhány dolgot nem árt tudnod.
+#
+# A katalógus formátuma: azonosító[szóközök]"érték"[szóközök]
+#
+# Az azonosító tulajdonképpen a program által használt kulcs.
+# Ezt ne fordítsd le, csak az értékét! Az idézőjel karakterek helyett
+# -- amennyiben szükséges -- `\"'-t használj! A backslash jel helyett `\\'
+# írandó. A `\n' nem használható, helyette a szokásos módon új sorba
+# kell írni a következő sorba szánt szöveget.
+#
+# Az új nyelvre fordítást kérem, hogy jelezd nekem. Nem muszáj szó
+# szerint fordítanod; ha kedved tartja, nyugodtan változtass a szövegen,
+# ha ezzel érdekesebbé vagy mókásabbá teszed azt.
+#
+# Hosszabb és rövidebb mondatok is beírhatók. A XaoS program automatikusan
+# számítja a megjelenítéshez szükséges időt.
+#
+# Bármiféle megjegyzést örömmel fogadok.
+#
+# A szövegnek el kell férnie a 320x200-as képernyőn, emiatt minden
+# feliratnak 40 karakternél rövidebbnek kell lennie. Ez itt pont 40 karakter:
+#234567890123456789012345678901234567890
+# Vigyázat, ez nem sok! Légy óvatos!
+# A kész fordítást próbáld ki ,,élesben'' is!
+#########################################################
+encoding "2"
+#dimension.xaf
+
+fmath "A fraktálok matematikája"
+fmath1 "A fraktálokkal foglalkozó tudomány nem
+régóta része a matematikának, s számos
+megválaszolatlan kérdést rejteget."
+fmath2 "Még a definíciók sem
+teljesen tisztázottak."
+fmath3 "Rendszerint akkor nevezünk
+fraktálnak valamit, ha önhasonló."
+
+def1 "Egy lehetséges definíció..."
+#Itt az intro.xaf-ban leírt definíció fog megjelenni.
+#Ha az általad fordított nyelven ez problémát okoz,
+#írj egy levelet nekem, s generálok egy plusz kulcsot.
+def2 "Mit is jelent ez?"
+def3 "Ennek megértéséhez először is
+különbséget kell tennünk topologikus
+dimenzió és az ún. Hausdorff-Besicovich
+dimenzió fogalma között."
+
+topo1 "A topologikus dimenzió
+a \"normális\" dimenziószám."
+topo2 "A pont 0 dimenziós,"
+topo3 "az egyenes szakasz 1 dimenziós alakzat."
+topo4 "A felületek 2 dimenziósak,
+és így tovább..."
+
+hb1 "A Hausdorff-Besicovich dimenzió
+fogalma a következőképpen adható meg:"
+hb2 "Minden kétszeresére nagyított
+szakasz kétszer hosszabb az eredetinél."
+hb3 "Viszont egy kétszeresére
+nagyított négyzet területe
+négyszerese az eredeti méretnek."
+hb4 "Több dimenzióban is
+hasonló szabályok érvényesek."
+hb5 "A dimenziószám kiszámítására
+általában a következő
+képlet alkalmazható:"
+hb6 "dimenzió = log m / log n,
+ahol n a nagyítás mértéke és
+m a méret változása."
+hb7 "Példa: a vonal esetében
+a nagyítás 2-szeres,
+a méretváltozás is 2-szeres:
+log 2 / log 2 = 1."
+hb8 "Négyzet esetében a nagyítás 2-szeres,
+a méret változása 4-szeres:
+log 4 / log 2 = 2."
+hb9 "Látható, hogy tényleg a \"normális\"
+dimenziószámot kapjuk eredményül,
+ha a szokásos alakzatokat vizsgáljuk."
+hb10 "A dolog igazán érdekessé
+a fraktálok vizsgálata során válik..."
+
+hb11 "Vegyük szemügyre a hópehely-görbét!"
+hb12 "Ez úgy készül, hogy minden vonalat
+négy másikkal helyettesítünk."
+hb13 "Minden új vonal az eredeti
+vonal hosszának harmada."
+hb14 "Háromszoros nagyításnál ezek
+a vonalak pontosan ugyanakkorák,
+mint az eredetiek."
+hb15 "Ha végtelen sokszor hajtjuk
+végre ezt az átalakítást,
+a kapott alakzat önhasonló lesz:"
+hb15b "minden egyes rész a
+teljes fraktál pontos mása."
+hb16 "Mivel pontosan négy másolat készült,
+a fraktál mérete 4-szeresére változott."
+hb17 "Ezt az előbbi egyenlőségbe beírva:
+log 4 / log 3 = 1,261..."
+hb18 "Most 1-nél nagyobb számot kaptunk!
+(A görbe topologikus dimenziója 1.)"
+hb19 "A Hausdorff-Besicovich dimenzió
+(1,261...) jelen esetben nagyobb,
+mint a topologikus dimenzió."
+hb20 "Definíciónk szerint tehát
+a hópehely-görbe fraktál."
+
+defe1 "Sajnos, definíciónk nem tökéletes,
+mert nem illik számos más alakzatra,
+amelyeket különben fraktálnak
+szokás nevezni."
+defe2 "Viszont rámutat a fraktálok
+egy érdekes tulajdonságára,"
+defe3 "mely a matematikusok táborán
+kívül is nagyon népszerű."
+defe4 "A Hausdorff-Besicovich dimenziót
+\"fraktáldimenzió\"-nak is hívják."
+
+#########################################################
+#escape.xaf
+escape "A fraktálok matematikája
+
+2. fejezet
+\"Szökési sebesség\" típusú fraktálok"
+escape1 "Bizonyos fraktálok
+(pl. a hópehely-görbe)
+egyszerű módon készülnek."
+escape2 "A XaoS programmal más típusú
+fraktálok gyárthatók:
+az ún. szökési sebességen
+alapuló fraktálok."
+escape3 "Kicsit másképpen hozhatók
+létre, de az eljárás lényege
+itt is az iteráció."
+#escape4 "They treat the whole screen as
+#a complex plane"
+escape4 "Képzeljük el a számítógép képernyőjét
+úgy, mintha az a komplex számsík lenne!"
+escape5 "A valós tengely (a szokásos
+számegyenes) vízszintesen,"
+escape6 "a képzetes tengely függőlegesen
+helyezkedik el."
+escape7 "Minden egyes ponthoz
+egy-egy pálya tartozik."
+escape8 "Ezt a pályát az f(z,c) függvénnyel
+számítjuk ki iteratív módon, ahol
+z a pálya előző pozícióját, c pedig
+a következő pozíciót jelenti
+komplex számban kifejezve a képernyő
+koordináta-rendszerében."
+escape9 "Például a Mandelbrot-halmaz esetében
+az iteratív függvény a z=z^2+c."
+orbit1 "Képzeljük el, hogy a 0-0.6i
+komplex számhoz tartozó pályát
+akarjuk bejárni!"
+orbit2 "Ezt a számot először c-be tesszük."
+orbit3 "A függvény első iteráltja a
+z=0+0i komplex szám:
+a pálya az origóból indul."
+orbit3b "Ezután ismételten kiszámítjuk az
+iterációt, minden egyes lépésben
+újabb z számokat kapva."
+orbit4 "Ha a pálya véges területen belül
+marad, a c számot bevesszük a halmazba,
+ellenkező esetben nem.
+Ez a Mandelbrot-halmaz definíciója."
+orbit5 "Esetünkben ez történt."
+orbit6 "Világosan látszik, hogy
+definíciónk alapján
+a c számot reprezentáló pont
+a halmaz belsejében van."
+orbit7 "Más esetekben gyakran
+a végtelenbe tart az iteráció,
+sok esetben igen gyorsan"
+orbit8 "(például a 10+0i szám
+első iteráltja 110, a második
+12110 és így tovább...)"
+orbit9 "A végtelenbe tartó pályák
+c pontjai kívül esnek a halmazon."
+
+bail1 "Bár eddig végtelen sok számról,
+s ezen végtelen sok szám
+iterációjáról volt szó,"
+bail2 "mégis, mivel a számítógépek
+csak véges mennyiségekben tudnak
+\"gondolkozni\", a fraktálokat
+nem tudjuk pontosan előállítani,
+csak közelítőleg."
+bail3 "Bebizonyítható, hogy ha a pálya
+az origótól 2 egységnél távolabbra
+távozik el, akkor az a pálya egészen
+biztosan a végtelenbe tart."
+bail4 "Ezért minden esetben abbahagyjuk
+a számolást, amint a pálya az előző,
+ún. kilépési teszten elbukik."
+bail5 "Ha tehát egy pont a halmazon
+kívül esik, egészen biztos,
+hogy csak véges sok lépésnyi
+számítást kell elvégeznünk."
+bail6 "Így készül a halmaz körüli
+csodálatos színkavalkád."
+bail7 "A külső pontokat olyan sorszámú
+színnel festjük be, ahány lépés után
+a pálya kilép a 2 sugarú origó
+körüli körből."
+iter1 "A halmaz belsejében viszont
+továbbra is végtelen sok számítást
+kéne elvégeznünk."
+iter2 "Hogy ezt elkerüljük, egy bizonyos
+lépésszám után mindenképpen leállítjuk
+a számolást, s a közelítő eredményt
+rajzoljuk ki a képernyőre."
+iter3 "Ezáltal az iteráció lépésszámának
+maximuma meghatározza, hogy a
+közelítő rajz mennyire lesz pontos."
+iter4 "Ha a maximális lépésszám 0,
+azaz egyáltalán nincs iteráció,
+egyetlen, 2 sugarú kört kapnánk
+az origó körül."
+iter5 "Ha a maximális pályahosszot
+egyre nagyobb lépésszámokkal határozzuk
+meg, a megjelenő kép egyre pontosabban
+adja vissza a halmazt, de a számítások
+időtartama is jóval hosszabb lesz."
+limit1 "A XaoS program alaphelyzetben
+170 lépésnyi iterációval dolgozik."
+limit2 "Vannak olyan területek, ahová
+sokáig belenagyíthatunk anélkül, hogy
+elérnénk ezt a maximumot."
+limit3 "Más helyeken elég hamar
+pontatlan, durva részleteket kapunk."
+limit4 "Ilyenkor a kép kevésbé látványos."
+limit5 "Ellenben ha az iterációk lehetséges
+maximumát megnöveljük, nagyon sok új,
+érdekes részletet láthatunk meg."
+ofracts1 "A XaoS program többi fraktáljához
+más formulák és kilépési tesztek
+tartoznak, de a számolási eljárás
+lényegében ugyanez mindenütt."
+ofracts2 "Olyan sok számításra van szükség,
+hogy a XaoS programba számos
+optimalizációs eljárást is
+be kellett építeni.
+
+Ezekről az eljárásokról részletesen a
+doc/xaos.info
+fájlban olvashat az
+érdeklődő felhasználó."
+
+#########################################################
+#anim.xhf
+anim "Mit tud a XaoS...?
+
+Animációk és pozíciófájlok"
+
+anim2 "Talán észrevetted már, hogy
+a XaoS program képes animációk és
+bemutatók, leírások visszajátszására."
+
+anim3 "Ezeket közvetlenül a XaoS
+segítségével rögzítettük."
+
+languag1 "Az animációk és a pozíció-fájlok
+egy egyszerű parancsnyelv
+segítségével adhatók meg"
+
+languag2 "(a pozíció-fájlok lényegében
+egy képkockát tartalmazó animációk)."
+
+languag3 "Az animációkat a későbbiekben
+\"kézzel\" át is lehet alakítani,
+ha még professzionálisabb
+hatást kívánunk elérni."
+
+languag4 "A XaoS program legtöbb animációja
+teljes egészében manuálisan készült,
+egyetlen pozíció-fájlból kiindulva."
+
+modif1 "A következő módosítással"
+
+modif2 "távolodó hatást érünk el,"
+modif3 "ezzel pedig felnagyítjuk a halmazt."
+
+newanim "Teljesen új animációk és
+effektusok is készíthetők."
+
+examples "A XaoS programban számos
+beépített animáció van, melyek
+a save/load menüből
+véletlenszerűen betölthetők."
+
+examples2 "Pozíciófájlok módosításával
+egyéb segédprogramok segítségével
+további bemutatók
+állíthatók össze."
+
+examples3 "Korlátokat csak
+a fantáziád szabhat
+- és a beépített parancsnyelv,
+melyet a xaos.info fájl
+ír le részletesen."
+
+#########################################################
+#barnsley.xaf
+
+intro4 "Bevezetés a fraktálok világába
+
+5. fejezet
+Barnsley formulája"
+
+barnsley1 "A Michael Barnsley
+által bevezetett formula"
+
+barnsley2 "generálja ezt a furcsa fraktált."
+
+barnsley3 "Belenagyítani nem
+annyira izgalmas,"
+
+barnsley4 "de szép Julia-halmazai vannak!"
+
+barnsley5 "Érdekessége az ún.
+kristályvonal-struktúra,"
+
+barnsley6 "ami eltér a szokásos
+\"organikus\" struktúrától."
+
+barnsley7 "Michael Barnsley nevéhez
+további fraktálok is fűződnek."
+
+barnsley8 "A most látható is ezek egyike."
+
+#########################################################
+#filter.xaf
+
+filter "Mit tud a XaoS...?
+
+Szűrők"
+
+#########################################################
+#filter.xhf
+
+filter1 "Szűrőnek nevezzük azokat
+az effektusokat, melyeket az egyes
+fraktálok kiszámítása után
+hajthatunk végre, kissé módosítva
+ezzel a megjelenő képet."
+
+filter2 "A XaoS programba beépített
+szűrők a következők:"
+
+motblur "motion blur (elkent mozgás);"
+
+edge "kétféle edge detection
+(szél-felismerés):"
+
+edge2 "az elsővel vastagabb vonalak
+készíthetők, melyet nagy felbontásnál
+érdemes használni,"
+
+edge3 "a másikkal vékonyabb vonalak
+jelennek meg;"
+
+star "csillagmező-szűrő (star-field);"
+
+interlace "ún. interlace-szűrő: 
+használatával a számítások
+felgyorsíthatók, s nagyobb
+felbontásnál a motion blur-höz
+hasonló effektust kapunk;"
+
+stereo "véletlen pontokból összeállított
+(random dot) sztereogram-szűrő"
+
+stereo2 "(ha a következő képeken semmit
+sem látsz, de máskor a sztereogramok
+működni szoktak, akkor talán
+a képernyő mérete nincs jól
+beállítva - futtasd a XaoS-t
+\"-help\" paraméterrel és olvasd 
+el az ott leírt információkat);"
+
+emboss1 "dombormű (emboss);"  #ÚJ
+
+palettef1 "paletta-emulátor 
+(true-color képernyőkön
+színforgatásra ad módot);"	#ÚJ
+
+truecolorf "true-color szűrő
+(true-color képeket generál
+8 bites színmélységnél is)."
+
+#########################################################
+#fractal.xaf
+
+end "Vége."
+
+fcopyright "Bevezetés a fraktálok világába
+
+Írta: Jan Hubička 1997 júliusában,
+illetve később további
+módosításokat eszközölt
+
+Magyar fordítás:
+Kovács Zoltán <kovzol@math.u-szeged.hu>"
+
+suggestions "
+Bármiféle megjegyzést, ötletet,
+javaslatot, köszönetnyilvánítást,
+és hibajelentést a
+
+xaos-discuss@lists.sourceforge.net
+
+címre várunk. Köszönjük!"
+
+#########################################################
+#incolor.xaf
+
+incolor1 "Általában a halmaz belsejében
+lévő pontokat ugyanazzal
+a színnel ábrázoljuk."
+
+incolor2 "A halmaz határai ily módon
+jól láthatóak, de a halmaz
+belseje unalmas látvány."
+
+incolor3 "Érdekesebbé tehető a kép,
+ha a pálya utoljára számított
+pontjának koordinátái alapján
+rendelünk színt a belső pontokhoz."
+
+incolor4 "A XaoS program 10-féle
+lehetőséget kínál ennek
+megvalósítására. Ezek az ún.
+belső színezési módok
+(\"in coloring modes\")."
+
+zmag "zmag (z-nagyság)
+
+A pálya utolsó pontjának
+abszolút értéke alapján
+színezzük a belső pontot."
+
+#########################################################
+#innew.xaf
+
+innew1 "Decomposition like
+(dekompozíciószerű)
+
+Lásd a külső színezéseket,
+ez teljesen ugyanaz,
+mint az ott leírt.
+"
+
+innew2 "real/imag
+(valós/képzetes)
+
+A pálya utolsó pontjának
+valós részét elosztjuk
+a képzetes résszel,
+s ez alapján színezünk."
+
+innew3 "A következő hatféle színezési
+mód formulái vagy véletlenszerűek,
+vagy más programokból
+lettek átvéve."
+
+#########################################################
+#intro.xaf
+
+fractal "Fraktálok..."
+fractal1 "Mit is nevezünk fraktálnak?"
+
+fractal2 "Benoit Mandelbrot definíciója:
+fraktálnak olyan halmazt nevezünk,
+melynek Hausdorff-Besicovich dimenziója
+határozottan nagyobb, mint
+topologikus dimenziója."
+
+fractal3 "Még mindig nem világos?"
+
+fractal4 "Semmi baj!
+Ez a definíció csupán
+matematikusok számára fontos."
+
+fractal5 "Hétköznapi fogalmazással
+a fraktál olyan alakzat"
+
+fractal6 "mely bizonyos részekből áll,"
+
+fractal7 "minden egyes rész 
+az egész fraktálhoz nagyon
+hasonló kicsinyített kópia."
+
+fractal8 "Ez az eljárás
+önmagát ismétli:"
+
+fractal9 "így épül fel a teljes fraktál."
+
+facts "A fraktálok számos meglepő
+tulajdonsággal rendelkeznek:"
+
+fact1 "nemigen változnak,
+ha kicsinyítjük vagy
+nagyítjuk őket,"
+fact2 "önhasonlók,"
+fact3 "és olyan, a természetben
+is előforduló alakzatokhoz
+hasonlítanak, mint
+például a felhők, hegyek
+vagy a partvonalak."
+# Az előbbi két sor majd fact4-ként kell, hogy álljon!
+# Last two lines will be cited as fact4. KZ
+
+fact5 "Nagyon sok matematikai
+struktúra fraktált
+határoz meg,"
+fact6 "olyasmit, ami a képernyőn
+is látható."
+fmath4 "A legtöbb fraktál
+iteratív eljárással készül:
+egy egyszerű lépés
+sokszori alkalmazásával."
+fmath5 "Ilyen például a Koch-görbe
+néven ismert fraktál,"
+fmath6 "melyet egyetlen vonal
+átalakításával kapunk
+oly módon,"
+fmath7 "hogy négy másikkal
+helyettesítjük."
+fmath8 "Ez az iteráció első lépése."
+fmath9 "Ezt az átalakítást azután
+megismételjük."
+fmath10 "Az alakzat két iteráció után..."
+fmath11 "3 iteráció után..."
+fmath12 "4 iteráció után..."
+fmath13 "A végtelen sok iteráció
+után keletkezett alakzatot
+tekintjük fraktálnak."
+fmath14 "A kapott alakzat hasonlít egy
+hópehely-forma harmadrészéhez."
+tree1 "Sok más alakzat készíthető
+hasonló eljárásokkal."
+tree2 "Például ha egy vonalat
+egy kicsit más módon alakítunk át,"
+tree3 "egy fát kapunk."
+nstr "Az egyes iterációk során
+a fraktálokban véletlen zajokat,
+hibákat is létrehozhatunk."
+nstr2 "Egy vonalat két vonallá"
+nstr3 "alakítva, s kis zajt hozzáadva"
+nstr4 "partvonalhoz hasonló
+fraktálok jöhetnek létre."
+nstr5 "Talán hasonló módon születnek
+a felhők, hegyek és a természet
+sok más alakzata."
+
+#######################################################
+## mset.xaf
+
+fact7 "A legismertebb fraktál
+kétségtelenül a..."
+
+mset "...Mandelbrot-halmaz,"
+mset1 "melyet egy nagyon
+egyszerű képlet:"
+mset2 "generál - mégis ez az egyik
+legszebb fraktál."
+mset3 "Mivel a Mandelbrot-halmaz fraktál,"
+mset4 "a határán"
+mset5 "a teljes halmaz miniatűr
+másai láthatók."
+mset6 "Ez közülük a legnagyobb.
+Kb. 50-szer kisebb
+a teljes halmaz méreténél."
+mset7 "A Mandelbrot-halmaz
+nem teljesen önhasonló:"
+mset8 "minden miniatűr kópia
+egy kicsit más."
+mset9 "Ez itt kb. 76000-szer
+kisebb a teljes halmaznál."
+mset10 "A halmaz más és más
+részén az eltérések is
+különfélék lehetnek."
+
+nat "A halmaz határán nem csak
+a teljes halmaz másait
+figyelhetjük meg,"
+nat1 "hanem ténylegesen végtelen sok
+lényegesen különböző formát!"
+nat2 "Néhány közülük meglepően
+hasonlít természeti képződményekre:"
+nat3 "láthatunk fákat,"
+nat4 "folyókat tavakkal,"
+nat5 "galaxisokat"
+nat6 "és vízeséseket."
+nat7 "A Mandelbrot-halmaz egyes
+részletei sci-fi novellák hőseire
+is emlékeztethetnek..."
+
+###############################################################################
+############
+
+juliach "Bevezetés a fraktálok világába
+
+2. fejezet
+Julia-halmazok"
+
+julia "Nem csak a Mandelbrot-halmaz
+képlete a z=z^2+c
+formula, hanem"
+julia1 "egy másiké is..."
+julia2 "...a Julia-halmazé."
+julia3 "Nem csupán egy Julia-halmaz létezik,"
+julia4 "hanem végtelen sok."
+julia5 "Mindegyiket más és más \"mag\"
+segítségével hozzuk létre,"
+julia6 "a magot pedig
+a Mandelbrot-halmazból választjuk."
+julia7 "A Mandelbrot-halmaz úgy is
+tekinthető, mint különböző
+Julia-halmazok térképe."
+julia8 "A Mandelbrot-halmaz belső
+mag-pontjaihoz olyan Julia-halmazok
+tartoznak, melyeknek nagy,
+összefüggő fekete területeik vannak."
+julia9 "A Mandelbrot-halmaz külső
+pontjaihoz ún. \"nem összefüggő\"
+Julia-halmazok tartoznak."
+julia10 "A legérdekesebb Julia-halmazoknál
+a mag-pontot a Mandelbrot-halmaz
+határáról választjuk."
+
+theme "A Julia-halmazok részletei,
+\"témája\" általában azon múlik, hogy
+hol választjuk a mag-pontot."
+theme1 "A Mandelbrot-halmazba belenagyítva
+a látott \"témához\" nagyon hasonló
+fraktált kapunk, ha"
+theme2 "átkapcsolunk a megfelelő
+Julia-halmazra."
+theme3 "De a nagyítást visszaállítva"
+theme4 "azt tapasztaljuk, hogy
+egy teljesen más fraktált vizsgálunk."
+theme5 "Lehet, hogy úgy tűnik:
+a Julia-halmazok elég unalmasak,
+hiszen tematikájuk nemigen változik."
+theme6 "A mag-pont választásával
+már szinte minden meghatározott."
+theme7 "Azonban ügyesen megválasztott
+mag-pont segítségével"
+theme8 "szép képek hozhatók létre."
+
+#########################################################
+#keys.xhf
+
+keys "Irányítás (billentyűzetről):
+
+q        - az animáció leállítása  
+Szóköz   - egy képkocka kihagyása  
+           (lehet, hogy várni kell)
+Bal/Jobb - a feliratok megjelenési 
+           időtartamának beállítása"
+
+#########################################################
+#magnet.xaf
+
+intro7 "Bevezetés a fraktálok világába
+
+8. fejezet
+Magnet (mágnes)"
+
+magnet "Ez NEM a Mandelbrot-halmaz."
+magnet1 "Az itt látható fraktált \"mágnesnek\"
+hívják, mivel a képletét a kísérleti
+fizikából vették át."
+magnet2 "Mágneses renormalizációs
+transzformációkkal kapcsolatos
+elméleti rácsok tanulmányozásakor
+fedezték fel."
+#Eredeti angol szöveg:
+#"It is derived from the study
+#of theoretical lattices in the
+#context of magnetic renormalization
+#transformations."
+#Kérném, hogy egy fizikus ellenőrizze! KZ
+#The translation should be verified by a physician! KZ
+
+similiar "Azért is érdekes a
+Mandelbrot-halmazhoz való hasonlósága,
+mert a fraktált előállító formula
+a valóságban is előfordul."
+
+magjulia "A hozzá tartozó Julia-halmazok
+nagyon szokatlanok."
+
+magnet3 "Van egy másik mágnes-fraktál is."
+
+#########################################################
+#new.xaf
+
+new "Mi új a 3.0-s verzióban?"
+speed "1. Gyorsabb működés"
+speed1 "A fő számítási ciklusokat
+\"kibontottuk\", s beépítettük a
+a periodicitás ellenőrzését."
+speed2 "Az új képeket szél-felismerési
+eljárással számítjuk ki."
+speed3 "Így az újonnan számított képek
+megjelnítése sokkal gyorsabb lett."
+speed4 "Például ha a Mandelbrot-halmazt
+egymillió iterációval számítjuk ki..."
+speed5 "számítás kezdete..."
+speed6 "kész!"
+speed7 "A XaoS program tartalmaz
+egy olyan heurisztikát is, mellyel a 
+periodicitás-ellenőrzés automatikusan
+kikapcsol, ha a számított pont
+valószínűleg a halmazon kívülre esik
+(amennyiben a szomszédos pontok közül
+mind a halmazon kívül van)."
+speed8 "A fő nagyító rutinokat is
+optimalizáltuk, ezzel kb. kétszeresére
+növelve a korábbi gyorsaságot."
+speed9 "A XaoS program most már
+130 FPS (kép/másodperc)
+lejátszási sebességre
+képes egy 130 Mhz-es Pentiumon."
+
+new2 "2. Szűrők (filters)"
+new3 "3. Kilenc külső színezési mód
+(out-coloring modes)"
+new4 "4. Új belső színezési módok
+(in-coloring modes)"
+new5 "5. True-color színezési módok"
+new6 "6. Animáció mentése és visszajátszása"
+newend "Továbbá számos egyéb fejlesztés,
+pl. a kép forgatása,
+jobb paletta-generálás...
+A ChangeLog fájlban követhetők
+az új változtatások." #ÚJ
+
+#########################################################
+#newton.xaf
+
+intro3 "Bevezetés a fraktálok világába
+
+4. fejezet
+A Newton-algoritmus"
+newton "Ezt a fraktált egy teljesen
+más képlet hozza létre:"
+newton1 "a Newton-féle numerikus gyökvonó
+eljárás, mellyel az x^3=1 egyenlet
+megoldásait keressük."
+newton2 "Azt vizsgáljuk, hogy hány
+iteráció szükséges ahhoz, hogy egy
+kiinduló számból eljussunk valamelyik
+gyök egy megfelelő közelítéséhez."
+newton3 "A három egységgyököt kék körök jelzik."
+newton4 "A legérdekesebbek azok a részek,
+ahol a kiinduló szám kb. egyforma
+távolságra van legalább
+két egységgyöktől."
+newton5 "Ez a fraktál túlságosan is önhasonló,
+ezért talán nem is annyira érdekes."
+newton6 "De a XaoS programmal
+\"Julia-szerű\" halmazok is készíthetők,"
+newton7 "melyben a mag-pont
+a közelítés hibája lesz."
+newton8 "Ezáltal a Newton-féle fraktál
+talán kicsit érdekesebb."
+newton9 "A XaoS program egy másik
+Newton-fraktált is ismer."
+newton10 "Ez a kép a Newton-féle 4.
+gyök-vonó algoritmust mutatja be."
+newton11 "A négy gyököt kék
+körök szemléltetik."
+
+#########################################################
+#octo.xaf
+intro6 "Bevezetés a fraktálok világába
+
+7. fejezet
+Octo"
+octo "Az Octo nem igazán ismert fraktál."
+octo1 "A XaoS programba szokatlan
+formája miatt került be."
+octo2 "A XaoS programmal a Newton-féle
+fraktálhoz hasonlóan itt is
+készíthetünk \"Julia-szerű\" halmazokat."
+
+#########################################################
+#outcolor.xaf
+
+outcolor "Külső színezési módok
+(out coloring modes)"
+outcolor1 "A Mandelbrot-halmaz unalmas
+fekete tó a képernyő közepén..."
+outcolor2 "Az őt körülvevő színes csíkok
+mutatják a halmaz határait."
+outcolor3 "Általában a színezést a
+kilépési teszt elbukásának
+gyorsasága adja meg."
+outcolor4 "Vannak azonban másféle
+színezési lehetőségek is."
+outcolor5 "A XaoS programban ezeket
+külső színezési módoknak hívjuk."
+
+iterreal "iter+real
+(iteráció+valós)
+
+A határon lévő színeket úgy határozzuk
+meg, hogy a pálya utolsó pontjának
+valós részét hozzáadjuk az
+iterációk számához."
+iterreal1 "A kicsit unalmas képek ezzel a
+módszerrel érdekesebbé tehetők."
+
+iterimag "Az iter+imag (iteráció+képzetes)
+eljárás hasonló az
+iter+real módszerhez."
+iterimag2 "Az egyetlen különbség, hogy
+most a képzetes részt vesszük
+figyelembe a valós rész helyett."
+
+iprdi "iter+real/imag
+(iteráció+valós/képzetes)
+
+Ezzel a módszerrel a határhoz közel
+lévő pontok színezésénél az iterációk
+számához hozzáadjuk az utolsó pont
+valós és képzetes részének hányadosát."
+
+sum "iter+real+imag+real/imag
+(iteráció+valós+képzetes+
++valós/képzetes)
+
+Az előzőekhez analóg módon készül."
+
+decomp "binary decomposition
+(bináris dekompozíció)
+
+Ha a képzetes rész pozitív, ez az
+eljárás az iterációszámmal színez.
+Ellenkező esetben az iterációk
+maximális számából levonja a
+bináris dekompozíció iterációszámát."
+
+bio "biomorphs
+(élő alakok)
+
+Az ezzel készített fraktálok
+hasonlítanak az egysejtű élőlényekre:
+ezért a fenti név."
+
+#########################################################
+#outnew.xhf
+
+potential "potential
+(potenciál)
+
+Ez a színezési mód nagyon jól
+néz ki true-color üzemmódban,
+ha nem nagyítjuk ki a fraktált."
+
+cdecom "color decomposition
+(szín-dekompozíció)"
+cdecom2 "Ebben az eljárásban a pálya utolsó
+pontjának argumentumából
+számítjuk ki az aktuális színt."
+cdecom3 "A módszer hasonlít a bináris
+dekompozícióhoz, csak itt folytonos
+a színátmenet."
+cdecom4 "A Newton-féle fraktál esetében
+ezzel a színezéssel megállapítható,
+hogy a sorozat melyik
+gyökhöz konvergál."
+
+smooth "smooth
+(sima)
+
+Ez az eljárás megpróbálja eltávolítani
+az iterációk által okozott sávos
+színezést folytonos színátmenetek
+alkalmazásával."
+smooth1 "A Newton-halmazra nem működik,
+és a Mágnes fraktálra sem, mivel
+ezeknek ún. véges attraktoruk van."
+smooth2 "Emellett csak true-color üzemmódban
+használható nagyobb színmélységeknél.
+Tehát 8 bites színmélység használatánál
+be kell kapcsolni a true-color szűrőt."
+
+#########################################################
+#phoenix.xhf
+
+intro5 "Bevezetés a fraktálok világába
+
+6. fejezet
+Phoenix"
+
+phoenix "Az ábrán a Phoenix nevű formulához
+tartozó Mandelbrot-halmaz látható."
+
+phoenix1 "Nem hasonlít a XaoS programban
+látható többi fraktálhoz, de van némi
+hasonlóság a Mandelbrot-halmaz
+és eközött:"
+
+phoenix2 "a Phoenix-halmaznak is van egy
+\"farka\", mely a teljes halmaz
+miniatűr kópiáit tartalmazza,"
+
+phoenix3 "s láthatóan a Mandelbrot- és
+Julia-témákban is van hasonlatosság,"
+
+phoenix4 "ellenben a Julia-halmazok
+egészen másak, mint
+Mandelbrot-szerű megfelelőik."
+
+#########################################################
+#plane.xaf
+
+plane1 "A komplex síkon vizsgálódva egy pont
+valós részét rendszerint a képernyő
+x-koordinátájához, míg képzetes részét
+az y-koordinátához rendeljük."
+
+plane2 "A XaoS program 6 további
+hozzárendelést biztosít."
+plane3 "1/mü
+
+Inverzió. A végtelenhez \"közeli\"
+pontokat az origó közelébe, az origó
+környékén lévő pontokat a végtelen
+távoli pontok \"környékére\"
+transzformáljuk. A hozzárendelés
+érdekessége, hogy végtelenül le
+lehet kicsinyíteni a fraktált:
+soha nem \"tűnik el\" a képernyőről."
+plane4 "Az eredeti Mandelbrot-halmaz..."
+plane5 "illetve az invertált mása."
+plane6 "A halmaz eredetileg középen volt;
+most az egészet \"kifordítottuk\".
+A végtelenül nagy külső fekete terület
+az origó környékén lévő eredeti halmaz."
+plane7 "A következő néhány képen először
+normális hozzárendeléssel, majd
+inverzión keresztül láthatjuk a
+számítások eredményét."
+
+plane8 "1/mü+0.25
+
+Szintén inverzió, csak a pólust
+változtattuk meg."
+
+plane9 "Mivel az inverzió középpontja
+(pólusa) most a halmaz határán fekszik,
+végtelen parabolaszerű
+határokat láthatunk."
+plane10 "Alkalmazásával más fraktálokon is
+érdekes hatásokat érhetünk el, mivel
+az eljárás megtöri a szimmetriát."
+
+lambda "A lambda-sík egy egészen más
+nézetből mutatja a számított fraktált."
+
+ilambda "1/lambda
+
+A lambda-sík és
+az inverzió kombinációja."
+
+imlambda "1/(lambda-1)
+
+A lambda-sík, egy eltolás és
+az inverzió kombinációja."
+
+imlambda2 "Ez az eljárás nagyon érdekesen
+változtatja meg a Mandelbrot-halmazt."
+
+mick "1/(mü-1.40115)
+
+Szintén inverzió, de a pólust
+most egy Feigenbaum-pontba toltuk el.
+(A Mandelbrot-halmaz a
+Feigenbaum-pontokban kvázi-önhasonló.)
+Az önhasonlóság így
+jobban vizsgálható."
+
+#########################################################
+#power.xaf
+
+intro2 "Bevezetés a fraktálok világába
+
+3. fejezet
+Magasabbfokú Mandelbrot-halmazok"
+
+power "Nem csupán a z^2+c képlettel
+készíthetünk fraktálokat."
+power2 "Csak egy kissé módosítva képletünket:
+az x^3+c formula a Mandelbrot-halmazhoz
+hasonló fraktált hoz létre."
+power3 "Ez a fraktál is sok-sok példányban
+tartalmazza a teljes halmaz
+kicsinyített mását."
+
+power4 "Hasonló fraktálok gyárthatók,
+ha a képleteket kicsit megváltozatjuk."
+
+pjulia "Ezeknek a halmazoknak is
+létezik a megfelelő Julia-halmazuk."
+
+#########################################################
+#truecolor.xaf
+
+truecolor "True-color színezési módok"
+truecolor1 "A fraktálokat rendszerint egy
+rögzített színpaletta használatával
+festjük ki. A true-color üzemmódban
+paletta-emuláció történik."
+truecolor2 "Az egyetlen különbség az,
+hogy több színt tartalmazó palettát
+használunk, folytonos színátmenetekkel."
+truecolor3 "A true-color üzemmód egy egészen
+speciális technikát használ. A fraktál
+számításakor kapott paraméterek közül
+többet is felhasználunk,"
+truecolor4 "hogy egy konkrét színt legeneráljunk,
+s ne csak egyetlen színsorszámot
+hozzunk létre."
+truecolor5 "Ezzel a módszerrel egyetlen pixelhez
+négy számítási érték is hozzátartozhat."
+truecolor6 "A true-color üzemmódban
+természetesen \"valódi színekre\" van
+szükség. Így a 8 bites színmélységű
+megjelenítésnél a true-color szűrőt
+is be kell kapcsolni."
+#########################################################
+#pert.xaf  #ÚJ (egészen a fájl végéig)
+
+pert0 "Perturbáció"
+pert1 "A Julia-halmazoknál más és más
+mag-pontokkal más és más fraktálok
+hozhatók létre ugyanazon képlettel."
+pert2 "Ehhez hasonlóan a Mandelbrot-halmaz
+is parametrizálható perturbáció
+hozzáadásával."
+
+pert3 "A kiinduló z számot ily módon
+megváltoztathatjuk: az alapérték 0."
+pert4 "A perturbáció-változtatás a
+megjelenített képre nincs akkora
+hatással, mint a Julia-halmazok
+magpont-választása, de a fraktál
+ezáltal véletlenszerűbbé tehető."
+
+##########################################################
+#palette.xaf
+
+pal "Véletlenszerű paletták"
+pal0 "A XaoS programba nem építettünk
+be előre elkészített színpalettákat
+(ez más programoknál gyakori).
+A XaoS véletlenszerűen színez."
+pal1 "Egyszerűen nyomogasd a 'P' gombot,
+amíg a XaoS program olyan palettát
+generál, ami megfelel az általad
+vizsgált fraktál számára!"
+pal2 "Három különböző módszer használatos:"
+pal3 "Az egyikkel egy bizonyos színtől
+a feketéig készítünk árnyalatokat."
+pal4 "A másodikkal a fekete színtől egy
+bizonyos színen keresztül
+a fehérhez jutunk el."
+pal5 "A harmadik módszert kubista
+festmények inspirálták."
+
+###########################################################
+#other.xaf
+
+auto1 "Autopilot
+(Robotpilóta)"
+auto2 "A lusta felhasználók a robotpilóta
+segítségével hátradőlve nézhetik a XaoS
+program automatikus fraktál-bejárását."
+fastjulia1 "Gyors Julia-böngésző mód"
+fastjulia2 "Ebben az üzemmódban a
+Julia-halmaz közvetlenül vizsgálható
+a mag-pont interaktív választásával."
+fastjulia3 "A Julia-halmaz konkrét kirajzolása
+előtt érdemes használni, mivel
+közelítőleg máris látható, hogy a kép
+milyen témájú lesz belenagyítás után."
+rotation "Képforgatás"
+cycling "Színforgatás"
+bailout "Kilépési teszt"
+bailout1 "A képen a Mandelbrot-halmaz látható
+'smooth' külső színezéssel."
+bailout2 "Ha a kilépési értéket 64-re állítjuk,
+a színátmenetek finomabbak."
+bailout3 "A legtöbb fraktál csak kevéssé
+ölt más formát, ha a kilépési értéket
+megváltoztatjuk."
+bailout4 "A Barnsley-fraktálokra ez
+azonban nem igaz."
+
+##############################################
+#for file trice.xaf
+
+trice1 "A Triceratops és a Catseye (macskaszem)
+fraktálok"
+trice2 "A kilépési érték csökkentésekor"
+trice3 "a szökési idejű fraktálok"
+trice4 "rendszerint más formát adnak,"
+trice5 "mint az eredeti paraméternél."
+trice6 "Ezzel a módszerrel igen érdekes"
+trice7 "minták állíthatók elő ugyanazon szín"
+trice8 "különböző területen való megjelenésekor."
+trice9 "A Triceratops fraktál is"
+trice10 "ezen a módon készült."
+trice11 "Sok hasonló kép készíthető"
+trice12 "a Triceratops fraktálon belül."
+trice13 "Mint neve is mutatja,
+a Macskaszem fraktál"
+trice14 "egy macska szeméhez hasonlít."
+trice15 "Ha növeljük a kilépési értéket..."
+trice16 "...sokkal érdekesebb képhez jutunk..."
+trice17 "...buborékokkal..."
+trice18 "...és szép Julia halmazokkal."
+
+##############################################
+#for file fourfr.xaf
+
+fourfr1 "Mandelbar, Lambda, Manowar és Spider"
+fourfr2 "Ez a Mandelbar halmaz."
+fourfr3 "Képlete: z = (conj(z))^2 + c"
+fourfr4 "Néhány Julia halmaza érdekes."
+fourfr5 "De nézzünk más fraktálokat is."
+fourfr6 "A Lambda fraktál struktúrája"
+fourfr7 "nagyon hasonlít a Mandelbrotéhoz."
+fourfr8 "Olyan, mintha a Mandelbrot halmazt
+a lambda síkra vetítenénk."
+fourfr9 "De a Lambda fraktál maga
+egy Julia halmaz íme,
+itt az igazi MandelLambda halmaz."
+fourfr10 "...gyors Julia-mód..."
+fourfr11 "Ez pedig a Manowar fraktál."
+fourfr12 "Egy Fractint felhasználó találta."
+fourfr13 "Az egész halmazhoz hasonló
+Julia halmazai vannak."
+fourfr14 "Ez pedig a Spider."
+fourfr15 "Ezt is egy Fractint felhasználó találta."
+fourfr16 "Ennek is hasonlók
+a Julia halmazai az eredeti halmazhoz."
+
+##############################################
+#for file classic.xaf
+
+classic1 "Sierpinski-háromszög, Sierpinski szőnyeg,
+Koch-féle hópehely"
+classic2 "Ez a híres Sierpinski-háromszög."
+classic3 "Ez itt a szökési időn alapuló változata."
+classic4 "Az alakját más és más 'Julia maggal'"
+classic5 "lehet megváltoztatni."
+classic6 "Ez a fraktál a Sierpinski-szőnyeg."
+classic7 "Íme a szökési időn alapuló változata."
+classic8 "Híres fraktál ez is."
+classic9 "Végül pedig íme a Koch-féle hópehely"
+classic10 "szökési idejű változata."
+
+##############################################
+#for file otherfr.xaf
+otherfr1 "További fraktáltípusok a XaoS programban"

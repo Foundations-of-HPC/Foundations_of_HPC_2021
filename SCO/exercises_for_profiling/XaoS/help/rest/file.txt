@@ -1,0 +1,18 @@
+.. _file:
+
+.. index::
+   pair: menu; File
+
+File
+====
+
+.. toctree::
+
+   loadpos
+   savepos
+   record
+   play
+   saveimg
+   loadexample
+   savecfg
+   quit

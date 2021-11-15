@@ -1,0 +1,472 @@
+RELEASE NOTES FOR XAOS VERSION 3.6
+----------------------------------
+
+Cross-platform changes
+======================
+
+o Supporting libpng >= 1.5 and 1.6 (J.B. Langston, Petr Gajdos)
+
+o Various bug fixes
+
+o New fractal types (Arpad Fekete)
+
+
+Mac-specific changes
+====================
+
+o Fixing zooming on Mac OS X 10.8 (J.B. Langston)
+
+
+RELEASE NOTES FOR XAOS VERSION 3.5
+----------------------------------
+
+Cross-platform changes
+======================
+
+o New Portuguese translation courtesy of Lucio Henrique de Arujo and
+  Zelia Maria Horta Garcia
+  
+o Fixed crash bug when using -render command line option with user formulas
+  (Mateusz Malczak)
+
+o Removed support for unmaintained platforms (DOS, BeOS, Plan 9, etc.)
+
+o Updated documentation to reflect infrastructure changes
+  (Discussion and issue tracking have moved to Google Groups and Google Code)
+
+o Additional fractal examples by J.B. Langston
+
+
+Windows-specific changes
+========================
+
+o Improved GUI appearance with modern fonts and controls on XP and Vista
+
+o Help format changed from WinHelp to HtmlHelp.  WinHelp was no longer
+  supported starting with Windows Vista and Windows 7.
+
+o Fixed bug where output was invisible when using XaoS from the command line
+
+o Simplified and improved build instructions for Windows developers
+
+
+GTK+ User Interface (Beta)
+==========================
+
+The GTK+ user interface is approaching beta quality.  We welcome beta 
+testers to try out this version and let us know what issues you encounter. 
+Please share your feedback with us on the developer's discussion group at:
+http://groups.google.com/group/xaos-devel.
+
+We ask that beta testers be advanced users who are comfortable compiling
+software from source and submitting useful bug reports including backtraces.
+If you are not comfortable with this, then please wait for the final version
+to be released.  We would also really appreciate it if any experienced GTK+ 
+developers can review our code and make suggestions for improvement. 
+
+Since the GTK+ UI is still not ready for everyday use, it will not be 
+compiled by default. You must explicitly enable it using the following
+configure switch:
+
+	--with-gtk-driver=yes
+
+In addition, we recommend you disable all other drivers when using the GTK
+driver using the following configure switches:
+
+	--with-x11-driver=no
+
+
+New Documentation Format (Beta)
+===============================
+
+We are in the process of migrating the XaoS help system to Sphinx and
+reStructuredText.  Our  user manual was previously in a crippled subset 
+of HTML that we dubbed XSHL, which was missing many features necessary 
+for maintaining modern, attractive documentation.  
+
+Sphinx was developed by the Python project for their documentation, and 
+it is very similar to a Wiki in the way you mark  up the text.  It can 
+output the results as HTML, PDF, and Windows Help.  It supports all the
+important things that are missing from the current help format, such as
+tables, images, and internet hyperlinks.  It can even convert LaTeX math 
+markup into image files that get included in the HTML output.
+
+The documentation still needs a lot of work before it is ready, and we 
+have to make some modifications to Sphinx itself in order to integrate 
+the documentation it produces with XaoS's help system.  However, it is 
+far enough along that we would welcome volunteers who are familar with 
+reStructuredText to submit improvements to the documentation.
+
+The new documentation is located in the help/rest directory, and it can
+be converted into HTML or PDF using the included Makefile.  In order to
+generate the output, you will need to install Sphinx.  Visit the Sphinx
+homepage at http://sphinx.pocoo.org/ for installation instructions and
+more information on the new documentation format.
+
+If you would like to help with the documentation, please contact us on 
+the discussion group at: http://groups.google.com/group/xaos-devel.
+We will be happy to help you get started.
+
+
+RELEASE NOTES FOR XAOS VERSION 3.4
+----------------------------------
+
+Cross-platform changes
+======================
+
+o New Italian translation courtesy of Sergio Zanchetta
+
+o Updated catalog and i18n for German by Andreas Madritsch
+
+o Bug fix to prevent garbled characters when using non-English languages
+  on modern systems using UTF-8
+
+o Bug fix to prevent XaoS from crashing after using the Render Animation
+  functionality
+
+o Bug fix to prevent incorrect colors on smooth coloring modes with
+  certain video modes
+
+Mac-specific changes
+====================
+
+This is a huge release for Mac users. The Mac user interface has been
+completely rewritten in Cocoa and improved in a number of ways:
+
+o Standard Aqua dialog boxes instead of the strange-looking Unixy things
+  in previous versions. Fields in dialog boxes now support cut and paste
+  as you would expect.
+
+o Pop-up menus are now displayed using standard Aqua menus
+
+o Menu bar in full-screen mode is now the standard Mac OS X menu bar. It
+  automatically slides into view when you move your mouse to the top of
+  the screen and slides out when you move away from it.
+
+o XaoS now has a standard Aqua about dialog box, which displays links to
+  license and credits in help file.
+
+o Help is now displayed via Mac OS X's standard help viewer. Tutorials
+  can still be launched via links in  the help viewer.
+
+o Support for opening xpf (Saved Position) and xaf (Saved Animation)
+  files directly from Finder via drag and drop and by double-clicking.
+  XaoS now includes its own document icon for these files as well.
+
+o Support for basic AppleScriptability via the standard script
+  dictionary. Includes things like opening files and manipulating the
+  window, but no XaoS-specific functionality.
+
+o Support for panning the fractal with the mouse scroll wheel or
+  trackpad two-finger gestures.
+
+In addition to the user interface improvements, XaoS for Mac has the
+following improvements:
+
+o Now uses greater precision (long double) for calculations to enable
+  much deeper zooms.
+
+o In addition to English, XaoS for Mac OS X now supports the following
+  languages: Czech, French, German, Hungarian, Italian, Romanian, and
+  Spanish.
+
+o Integration with Stone Design's Videator (http://stone.com/Videator/).
+  XaoS can now send live a live video stream to Videator, which can then
+  do post-processing using Mac OS X's core video technology. This is
+  great for VJing (live video performance art). See
+  http://stone.com/Videator/VJ.html for more details.
+
+o Edge Detection and Pseudo 3D filters now work correctly.  Fixed a
+  bug that previously caused them to render the image completely black.
+
+Experimental GTK+ Port
+======================
+
+An experimental GTK+ user interface has been added in the src/ui/ui-drv/gtk
+directory. Eventually we hope to replace the old X11 interface with this
+one so that XaoS will blend in seamlessly with the GNOME environment.
+
+Right now, this port is incomplete and it should be considered an alpha-
+quality preview. As such, the GTK+ port will not be compiled by default.
+You must explicitly enable it using the following configure switch:
+
+	--with-gtk-driver=yes
+
+In addition, we recommend you disable all other drivers when using the GTK
+driver using the following configure switches:
+
+	--with-x11-driver=no
+	--with-dga-driver=no
+	--with-ggi-driver=no
+	--with-aa-driver=no
+
+Please do not report bugs against the GTK+ driver. We know that it is very
+buggy and we are working to rapidly improve it. If you want to help with the
+GTK+ driver's development, please contact the xaos-devel mailing list first,
+since it is likely that your patches could conflict with the rapid development
+that is taking place on this driver.
+
+RELEASE NOTES FOR XAOS VERSION 3.3
+----------------------------------
+
+This release is mostly done by Mateusz Malczak who implemented user
+formula support for XaoS. This feature has been a huge demand for
+several years and we proudly (humbly?) announce it to the public
+audience now.
+
+Mateusz has been working on the underlying SFFE (SegFault Formula
+Evaluator) library for several months. XaoS-3.3 can be compiled using
+both NASM (Netwide Assembler) or GSL (GNU Scientific Library) for the
+underlying complex arithmetics used by SFFE. For more information about
+the available user functions please read the enclosed documentation 
+(see online help, "Other things to read", last entry), or visit
+Mateusz's info page on http://www.segfaultlabs.com/sfXaoS.
+
+User formula support has been tested on Linux, Windows, and Mac OS X 
+systems. Recent Ubuntu versions should work without any problems.
+
+You may also notice that internationalization can be broken on modern
+Linux systems. This is due to the use of Unicode (UTF8) by default on
+these operating systems (including Ubuntu 7.x). To solve these
+problems please read Section 6 in src/i18n/README. If you are a packager
+of a Linux distribution, you may consider to add extra codepages for
+standard locales to the dependency list of XaoS (or create a package
+which installs an extra locale if needed).
+
+In addition, this version includes several fixes to the X11 driver 
+contributed by Tormod Volden. These improve compatibility with recent 
+versions of Xorg (-fullscreen and -root options), XScreenSaver 
+(-window-id), and Beryl and Compiz (extreme transparency).
+
+Other improvements include a bug fix for color cycling and a performance 
+mode, which inhibits text output when using XaoS for public exhibition 
+(VJing). These changes were contributed by Andrew Stone.
+
+Finally, this version includes several build improvements for Mac OS X
+and a bug fix for incorrect colors on Intel Macs when switching from
+fullscreen to windowed mode.
+
+
+RELEASE NOTES FOR XAOS VERSION 3.2.3
+------------------------------------
+
+Romanian translation added. Contributed by Ilinca Sitaru.
+
+
+RELEASE NOTES FOR XAOS VERSION 3.2.2
+------------------------------------
+
+This release contains a rewritten Mac OS X port by J. B. Langston III,
+and some small fixes for pipes by Marton Torok. For more details
+please read the ChangeLog file.
+
+
+RELEASE NOTES FOR XAOS VERSION 3.2.1
+------------------------------------
+
+A new fractal type, the Spidron hornflake has appeared. We changed
+the web site to a dokuwiki database, so the help system contains
+now a converter for dokuwiki (not completely working yet).
+
+STICKY/DESTDIR is now supported (by Claudio Fontana). The French
+translation is updated (by Philippe Wautelet). Bigger fonts are
+available for Latin-2 based usage if the user changes the screen
+resolution more than 800x600 or 1000x720.
+
+Some small fixes have been done in the catalog files.
+
+
+RELEASE NOTES FOR XAOS VERSION 3.2
+----------------------------------
+
+Main points are the classic Sierpinski and Koch fractals, but still
+other formulas are introduced. Some 'oldie but goldie' fractals are
+included from the Fractint formula database. The keystroke order has been
+changed a little bit. Now gcc-4.0.x is also supported (-mcpu is deprecated
+now and the source had to be modified for this).
+
+The new formulas are demonstrated with 3 new tutorial movies. These are
+also available in Hungarian language. Volunteers are requested to
+translate the new movies into other languages.
+
+
+RELEASE NOTES FOR XAOS VERSION 3.1.3
+------------------------------------
+
+Using this release gcc version 4.0 should also compile the code, not only
+the 3.x versions.
+
+Two new fractal types were also added. In addition, the DirectX header
+files have been fixed. The French translations are updated.
+
+
+RELEASE NOTES FOR XAOS VERSION 3.1.2
+------------------------------------
+
+This release is a fast bugfix for some gcc versions (or more precisely,
+there is a workaround for the B-B bug, see the ChangeLog for details).
+The example files were not able to load in version 3.1.1 and msgmerge
+was not recognized (this is fixed, however not tested yet).
+
+There are other small but irrelevant fixes (see ChangeLog), too.
+
+
+RELEASE NOTES FOR XAOS VERSION 3.1.1
+------------------------------------
+
+This release is a CVS snapshot freeze for those who are using newer
+systems. The most important update is a fix for gcc-3.4. There are also
+
+- improvements in French and Spanish translations,
+- some more example files (contributed by Zsigmond Kovács),
+- some fixes which patch annoying problems.
+
+For other issues please read the ChangeLog file.
+
+
+RELEASE NOTES FOR XAOS VERSION 3.1
+----------------------------------
+
+We would like to release a quality product in all manner. Unfortunately,
+such a complex software like XaoS requires many details and it does not
+seem to be so easy to put a quality software together.
+
+Well, we did all our best... Here come the latest release binaries
+for Linux, Windows and DOS. They should work with the following
+restrictions:
+
+1. The Linux version seems to be the most stable one. Almost
+   no bugs were encountered testing it the last few weeks.
+   SuSE 7.3 and SuSE 8.0 should be good enough to compile
+   it. The latest source has been also tested on the Compile
+   Farm of SourceForge.net with the next results:
+   
+   * [x86] Linux 2.4 (Debian 2.2)
+     Compiles OK. Seems to be build properly.
+     
+   * [x86] Linux 2.4 (Red Hat 7.3)
+     Compiles OK, runs properly. It is suggested to
+     configure it with --with-mitshm=no to avoid immediate
+     exit after startup. Runs correctly in an X11 window
+     on cf.sf.net.
+     
+   * [x86] FreeBSD (4.7-STABLE)
+     ./configure exits properly, make stops with an error.
+     
+   * [Alpha] Linux 2.2 (Debian 3.0)
+     ./configure exits properly, make stops with an error
+     during compiling ui.c.
+     
+   * [PPC - G4] MacOS X 10.1 SERVER Edition
+     Compiles OK, the executable gave MIT/SHM problem
+     with "./configure". It should work with --with-mithsm=no,
+     but currently I have no access to any Mac OS X
+     systems to test this.
+     
+   * [Sparc - Ultra60] Linux 2.4 (Debian 3.0)
+     Compiles OK, seems to be build properly.
+     
+   * [Sparc - R220] Sun Solaris (8)
+     ./configure stops with an error.
+     
+   * [CerfCube SA 1110] Linux 2.4 (Debian 3.0)
+     Compiles OK, seems to be build properly.
+     
+   * [J2EE] IBM WebSphere
+     Compiles OK, runs properly.
+     
+   I tried to run the executables, mostly I got "Cannot initialize
+   driver", except where I wrote "runs propery" above. I'm almost sure
+   that those platforms I wrote "seems to be build properly" for, XaoS
+   will work without any problems, because there should be only "Can't
+   open display"-related configuration errors on cf.sf.net and/or at my
+   place.
+   
+   You can also realize that internationalization (i18n) will only work
+   if you install XaoS as the system administrator with "make install".
+   Future releases may solve this problem.
+   
+   Tcl/Tk interface now works, but it is not updated since a rather long
+   time. You can run it entering "wish ./xaosmenu.tcl &" in a Unix shell
+   in the bin/ directory. This interface is experimental.
+   
+   Under SVGAlib latin2 fonts will not work for some internationalized
+   messages.
+   
+   For compilation with Aalib, you need version 1.4 which can be
+   downloaded from http://aa-project.sf.net.
+   
+2. Microsoft DOS users will enjoy i18n if their system supports it.
+   Unfortunately some systems have to have plain DOS to make i18n
+   available. Many Windows systems also support running batch
+   files from native Windows, however not all (my Windows NT 4
+   does not). DOS users should run xaos-??.bat in the bin\
+   directory.
+   
+   Note that some messages in latin2 fonts will not be displayed
+   correctly.
+   
+   Aalib may not work 100% correctly. It may depend on your DPMI
+   settings. You should download the latest csdpmi*.zip package.   
+   
+   If you want to compile XaoS from scratch, you should download
+   the following software:
+   
+   aalib-1.4rc5.tar.gz, all402.zip, bnu213b.zip, djdev203.zip,
+   fil41b.zip, gcc2952b.zip, gtxt040b.zip, licv17b.zip, mak3791.zip,
+   png1012b.zip, txi42b.zip, zlib114b.zip.
+   
+   Aalib must be patched to compile it (I sent a patch to the
+   SourceForge Tracker) and libvga and libtext (needed for Aalib) must
+   be also installed. Note that libtext will not compile under the
+   newest DJGPP, if someone know why DJGPP fails to compile the
+   appropriate assembly code, please write to us.
+   
+3. XaoS has i18n support under Microsoft Windows now. You are not
+   suggested changing the drivers many times because XaoS will
+   crash.
+   
+4. Here is a list about recent bugs and problems:
+     
+   * Fixing Macintosh version (load/save works incorrectly).
+   * Checking why Bailout item is duplicated in Windows help.
+   * Displaying latin2 fonts correctly.
+   * Fixing catalog files (mainly French and Spanish).
+   * Filling up i18n for menu files for some languages.
+   * Fixing Macintosh version (crash when loading random examples).
+   * Fixing Windows version (crash when several times saving files
+     and configurations).
+   * Fixing generated xaos.dlg for certain languages (e.g. Hungarian).
+   * Fixing crashing configure/make for all problematic platforms.
+   * Rewriting i18n to be easier to add new menus and others.
+   * All other todos announced in TODO file.
+
+That's all. However the problem list is quite long, we hope
+you will enjoy XaoS 3.1.
+
+Regards,
+
+Zoltan Kovacs <kovzol@math.u-szeged.hu>
+Andreas Madritsch <amadritsch@datacomm.ch>
+Jan Hubicka <jh@ucw.cz>
+J.B. Langston <jb-langston@austin.rr.com>
+
+Credits:
+
+Jan Hubicka is the main author of XaoS. He wrote the biggest parts of
+this program, in fact, all the most important things.
+
+Andreas Madritsch helped a lot putting together version 3.1. He also
+compiled the DOS and Windows executable and made German translations of
+menu items available. He added bailout and 3 fractal types into version
+3.1. He also fixed i18n to work under Windows correctly.
+
+Zoltan Kovacs wrote this documentation about the recent installation
+problems and he was finalizing release 3.1. He added i18n support into
+XaoS and cleaned up the code as it was possible.
+
+J.B. Langston contributed the Mac OS X native driver, the new XaoS web
+design, and has helped maintain the software from 3.2.2 onward.
+
+Many others helped as well. The full list of them can be seen in file
+AUTHORS. 

@@ -48,11 +48,11 @@ for ( int r = 0; r < ITER; r++ )
 	// iteration
 
 	sum  += sumA + sumB;             // here we try to hide the latency of fp sum
-	sumA  = A[ 0 ] + A[ 1 ];	   // operation: sumA and sumB have been calculated
-	sumB  = A[ 2 ] + A[ 3 ];	   // in the previous iteration
+	sumA  = A[ 0 ] + A[ 1 ];         // operation: sumA and sumB have been calculated
+	sumB  = A[ 2 ] + A[ 3 ];         // in the previous iteration
 	  
-	A[0] = A[UNROLL];   		   // now the UNROLL-th element is available
-					   // (or much more "closer" than before)
+	A[0] = A[UNROLL];   	         // now the UNROLL-th element is available
+				         // (or much more "closer" than before)
       }
       
     sum += sumA + sumB;

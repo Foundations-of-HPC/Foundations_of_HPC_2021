@@ -1,0 +1,20 @@
+#!/bin/bash
+
+PAPI_INC=/scratch/Software/include
+PAPI_LIB=/scratch/Software/lib
+
+WITH_PAPI=-DUSE_PAPI
+
+for f in prefetching2.v?.c;
+do
+    version=$( echo $f | cut -d'.' -f2 | cut -d'v' -f2)
+    echo "compiling prefetching2.vall.c -> " prefetching2.v$version
+    if [[ "$version" > 0 ]];
+    then
+	gcc -std=c11 -ggdb3 ${WITH_PAPI} -I${PAPI_INC} -o prefetching2.v$version prefetching2.vall.c -DPREFETCH=$version -L${PAPI_LIB} -lpapi  -lm
+	gcc -std=c11 ${WITH_PAPI} -I${PAPI_INC} -O3 -march=native -faggressive-loop-optimizations -o prefetching2.v$version.O3n prefetching2.vall.c -DPREFETCH=$version -L${PAPI_LIB} -lpapi  -lm
+    else
+	gcc -std=c11 -ggdb3 ${WITH_PAPI} -I${PAPI_INC} -o prefetching2.v0 prefetching2.v0.c -L${PAPI_LIB} -lpapi  -lm
+	gcc -std=c11 ${WITH_PAPI} -I${PAPI_INC} -O3 -march=native -faggressive-loop-optimizations -o prefetching2.v0.O3n prefetching2.v0.c -L${PAPI_LIB} -lpapi  -lm
+    fi
+done

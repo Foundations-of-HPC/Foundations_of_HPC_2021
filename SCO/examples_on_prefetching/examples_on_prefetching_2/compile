@@ -3,7 +3,7 @@
 PAPI_INC=/scratch/Software/include
 PAPI_LIB=/scratch/Software/lib
 
-WITH_PAPI=-DUSE_PAPI
+#WITH_PAPI=-DUSE_PAPI
 
 for f in prefetching2.v?.c;
 do

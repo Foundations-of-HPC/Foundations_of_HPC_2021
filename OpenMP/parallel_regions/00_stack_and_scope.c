@@ -64,8 +64,8 @@ int main( int argc, char **argv )
 	  (void*)&i - (void*)top_of_stack );
 
 #pragma omp parallel
-#pragma omp master
-  nthreads = omp_get_num_threads();
+#pragma omp master                    // a parallel region made of
+  nthreads = omp_get_num_threads();   // a single line
 
   printf("using %d threads\n", nthreads);
   size_t stack_base_addresses[ nthreads ];

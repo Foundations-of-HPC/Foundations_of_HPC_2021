@@ -44,8 +44,9 @@
 
 int main( int argc, char **argv )
 {
-  int i;
-  int nthreads=1; 
+  int     i;
+  int     nthreads = 1;
+  double *array_s, *array_p;
   register unsigned long long base_of_stack asm("rbp");
   register unsigned long long top_of_stack asm("rsp");
 
@@ -63,16 +64,25 @@ int main( int argc, char **argv )
 	  (void*)base_of_stack - (void*)&i,
 	  (void*)&i - (void*)top_of_stack );
 
+  // these allocations are made in a serial region
+  array_s = (double*)malloc( 10*sizeof(double)); 
+  array_p = (double*)malloc( 10*sizeof(double));
+
+  printf( "main thread :\n"
+	  "\tarray_s is at address %p\n"
+	  "\tarray_p is at address %p\n",
+	  array_s, array_p );
+
 #pragma omp parallel
-#pragma omp master                    // a parallel region made of
-  nthreads = omp_get_num_threads();   // a single line
+#pragma omp master
+  nthreads = omp_get_num_threads();
 
   printf("using %d threads\n", nthreads);
   size_t stack_base_addresses[ nthreads ];
   size_t stack_top_addresses[ nthreads ];
-  
-  // also prove who is the private i for each thread
-#pragma omp parallel private(i)
+
+  // also prove who are the private i and array_p for each thread
+ #pragma omp parallel private(i, array_p)
   {
     int me = omp_get_thread_num();
     unsigned long long my_stackbase;
@@ -89,7 +99,10 @@ int main( int argc, char **argv )
 	    "\t\t%td from my stackbase and %td from main\'s\n",	    
 	    syscall(SYS_gettid), me,
 	    (void*)my_stackbase, (void*)base_of_stack - (void*)my_stackbase,
-	    &i, (void*)&i - (void*)my_stackbase, (void*)&i - (void*)base_of_stack);	    
+	    &i, (void*)&i - (void*)my_stackbase, (void*)&i - (void*)base_of_stack);
+
+    printf( "thread %d: I see array_s at address %p and array_p at address %p\n",
+	    me, array_s, array_p );
   }
 
   printf( "\n" );
@@ -117,5 +130,8 @@ int main( int argc, char **argv )
 	   omp_stacksize);
 
   printf("\n");
+
+  free(array_p);
+  free(array_s);
   return 0;
 }

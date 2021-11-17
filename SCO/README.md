@@ -20,12 +20,12 @@ This series of lectures is about code optimization on single-core.
 
 Some materials about how to use the debugger and how to profile a code are also [provided](./profiling.pdf) with some examples on [debugging](./debugging_examples) and on [profiling](./exercises_for_profiling).
 
-### What is recquired for the exam
+### What is required for the exam
 
-_In general consider that you will not be recquired anything at assembler level. All the examples and discussions presented in the slides have been discussed only to let you undertand better what happens behind the scenes._
+_In general consider that you will not be required anything at assembler level. All the examples and discussions presented in the slides have been discussed only to let you undertand better what happens behind the scenes._
 
 ##### Architecture
-As for the final oral exam, it will be recquired that the candidate has a firm understanding of the modern CPU architecture, so what being out-of-order is about, the pipeline concept, the cache hierarchy and how a typical cache works, the branch prediction and the concept of conditional branching and its impact.
+As for the final oral exam, it will be required that the candidate has a firm understanding of the modern CPU architecture, so what being out-of-order is about, the pipeline concept, the cache hierarchy and how a typical cache works, the branch prediction and the concept of conditional branching and its impact.
 
 ##### Running model and memory allocation
 
@@ -35,7 +35,7 @@ Also the main concepts about how the memory allocation works and what is the mem
 ##### Optimization / cache
 
 Basically all the materials presented in the slides should be mastered by the candidate.
-The “cache resonance” and the exact details of cache mapping are recquired only to get the maximum grade, a simpler general understanding of the concept is sufficient even for high marks.
+The “cache resonance” and the exact details of cache mapping are required only to get the maximum grade, a simpler general understanding of the concept is sufficient even for high marks.
 
 ##### Optimization / branches
 
@@ -48,7 +48,7 @@ The candidate must be familiar with the concept of pipeline and ILP and with how
 
 ##### Optimization / loops and prefetching
 
-Some basic concepts and techniques on how to write loops are presented. We recquire that they are all clear to the candidate, as well as the concept of “prefetching” data in loops (direct prefetching is not recquired).
+Some basic concepts and techniques on how to write loops are presented. We require that they are all clear to the candidate, as well as the concept of “prefetching” data in loops (direct prefetching is not a must-have).
 
 
 

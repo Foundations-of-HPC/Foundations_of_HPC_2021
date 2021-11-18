@@ -58,8 +58,8 @@ int main( int argc, char **argv )
 
 
   
-#pragma omp parallel
-#pragma omp master
+ #pragma omp parallel
+ #pragma omp master
   nthreads = omp_get_num_threads();
   
   printf("using %d threads\n\n", nthreads);
@@ -73,27 +73,27 @@ int main( int argc, char **argv )
   memset( min_timings, 0, 3*sizeof(double));
   
   // ----------------------------------------------------- constant work
-#pragma omp parallel 
+ #pragma omp parallel 
   {
     int myid = omp_get_thread_num();
     double tstart, tend;
 
     tstart = omp_get_wtime();
-#pragma omp for schedule(static) reduction(+:S)
+   #pragma omp for schedule(static) reduction(+:S)
     for( int i = 0; i < N; i++ )
       S += heavy_work( 1000 );
     tend = omp_get_wtime();
     timings[STATIC][myid] = tend - tstart;
 
     tstart = omp_get_wtime();
-#pragma omp for schedule(dynamic) reduction(+:S)
+   #pragma omp for schedule(dynamic) reduction(+:S)
     for( int i = 0; i < N; i++ )
       S += heavy_work( 1000 );
     tend = omp_get_wtime();
     timings[DYNAMIC][myid] = tend - tstart;
     
     tstart = omp_get_wtime();
-#pragma omp for schedule(guided) reduction(+:S)
+   #pragma omp for schedule(guided) reduction(+:S)
     for( int i = 0; i < N; i++ )
       S += heavy_work( 1000 );
     tend = omp_get_wtime();
@@ -125,27 +125,27 @@ int main( int argc, char **argv )
   memset( timings, 0, 3*nthreads*sizeof(double));
   memset( min_timings, 0, 3*sizeof(double));
 
-#pragma omp parallel 
+ #pragma omp parallel 
   {
     int myid = omp_get_thread_num();
     double tstart, tend;
 
     tstart = omp_get_wtime();
-#pragma omp for schedule(static) reduction(+:S)
+   #pragma omp for schedule(static) reduction(+:S)
     for( int i = 0; i < N; i++ )
       S += heavy_work( i );
     tend = omp_get_wtime();
     timings[STATIC][myid] = tend - tstart;
 
     tstart = omp_get_wtime();
-#pragma omp for schedule(dynamic) reduction(+:S)
+   #pragma omp for schedule(dynamic) reduction(+:S)
     for( int i = 0; i < N; i++ )
       S += heavy_work( i );
     tend = omp_get_wtime();
     timings[DYNAMIC][myid] = tend - tstart;
     
     tstart = omp_get_wtime();
-#pragma omp for schedule(guided) reduction(+:S)
+   #pragma omp for schedule(guided) reduction(+:S)
     for( int i = 0; i < N; i++ )
       S += heavy_work( i );
     tend = omp_get_wtime();
@@ -182,21 +182,21 @@ int main( int argc, char **argv )
     double tstart, tend;
 
     tstart = omp_get_wtime();
-#pragma omp for schedule(static) reduction(+:S)
+   #pragma omp for schedule(static) reduction(+:S)
     for( int i = 0; i < N; i++ )
       S += heavy_work( N-i+1 );
     tend = omp_get_wtime();
     timings[STATIC][myid] = tend - tstart;
 
     tstart = omp_get_wtime();
-#pragma omp for schedule(dynamic) reduction(+:S)
+   #pragma omp for schedule(dynamic) reduction(+:S)
     for( int i = 0; i < N; i++ )
       S += heavy_work( N-1+1 );
     tend = omp_get_wtime();
     timings[DYNAMIC][myid] = tend - tstart;
     
     tstart = omp_get_wtime();
-#pragma omp for schedule(guided) reduction(+:S)
+   #pragma omp for schedule(guided) reduction(+:S)
     for( int i = 0; i < N; i++ )
       S += heavy_work( N-i+1 );
     tend = omp_get_wtime();
@@ -227,7 +227,7 @@ int main( int argc, char **argv )
   memset( timings, 0, 3*nthreads*sizeof(double));
   memset( min_timings, 0, 3*sizeof(double));
 
-#pragma omp parallel 
+ #pragma omp parallel 
   {
     int myid   = omp_get_thread_num();
     int myseed = myid;
@@ -235,7 +235,7 @@ int main( int argc, char **argv )
 
     srand( myseed );
     tstart = omp_get_wtime();
-#pragma omp for schedule(static) reduction(+:S)
+   #pragma omp for schedule(static) reduction(+:S)
     for( int i = 0; i < N; i++ )
       S += heavy_work( 100 + rand_r(&myseed) % 2345 );
     tend = omp_get_wtime();
@@ -243,7 +243,7 @@ int main( int argc, char **argv )
 
     srand( myseed );
     tstart = omp_get_wtime();
-#pragma omp for schedule(dynamic) reduction(+:S)
+   #pragma omp for schedule(dynamic) reduction(+:S)
     for( int i = 0; i < N; i++ )
       S += heavy_work( 100 + rand_r(&myseed) % 2345 );
     tend = omp_get_wtime();
@@ -251,7 +251,7 @@ int main( int argc, char **argv )
 
     srand( myseed );
     tstart = omp_get_wtime();
-#pragma omp for schedule(guided) reduction(+:S)
+   #pragma omp for schedule(guided) reduction(+:S)
     for( int i = 0; i < N; i++ )
       S += heavy_work( 100 + rand_r(&myseed) % 2345 );
     tend = omp_get_wtime();

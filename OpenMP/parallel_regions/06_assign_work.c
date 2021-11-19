@@ -85,9 +85,9 @@ int main( int argc, char **argv )
                                                  //  only the master thread will
                                                  //  execute the code in the block.
                                                  //  
-#pragma omp parallel if ( N > 10 )
+ #pragma omp parallel if ( N > 10 )
   {
-#pragma omp master    
+   #pragma omp master    
     printf("running %d threads\n", omp_get_num_threads() );
     
     int myid = omp_get_thread_num();
@@ -104,14 +104,14 @@ int main( int argc, char **argv )
     if ( myid < 3 )
       results[myid] = result;
   }
-#else                                            // ---------- serial execution
+ #else                                           // ---------- serial execution
 						 // 
 
   results[0] = heavy_work_0( N, 0 );
   results[1] = heavy_work_1( N, 0 );
   results[2] = heavy_work_2( N, 0 );
   
-#endif                                           // ---------------------------
+ #endif                                          // ---------------------------
 						 // 
   
   double tend = CPU_TIME;
@@ -121,12 +121,12 @@ int main( int argc, char **argv )
 	 results[0] + results[1] + results[2],
 	 tend-tstart);
   
-#if !defined(USE_THREAD_BASED_TIMER)
+ #if !defined(USE_THREAD_BASED_TIMER)
   printf("\nnote: if you notice something strange about the timing, like the fact that\n"
 	 "the OpenMP timings is larger than the serial timings, you may consider to use\n"
 	 "a different CLOCK, like CLOCK_THREAD_CPUTIME_ID instead of CLOCK_PROCESS_CPUTIME_ID.\n"
 	 "To do that, compile this code with -DUSE_THREAD_BASED_TIMER\n");
-#endif
+ #endif
   return 0;
 }
 

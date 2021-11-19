@@ -42,7 +42,7 @@ int golden_values[3];
 #pragma omp threadprivate( me, golden_values )
 
 
-void set_up_golden_values( double );
+void set_up_golden_values( void );
 void do_work( int, unsigned long long *);
 
 
@@ -68,7 +68,7 @@ int main( int argc, char **argv )
       // case that they must be generated
       // or acquired by one thread only
 
-      set_up_golden_values( drand48() );
+      set_up_golden_values( );
 
       unsigned long long result;
      #pragma omp parallel copyin(golden_values)
@@ -99,7 +99,7 @@ int main( int argc, char **argv )
       // case that they must be generated
       // or acquired by one thread only
 
-      set_up_golden_values( drand48() );
+      set_up_golden_values( );
 
       int local_golden[3];
       for( int i = 0; i < 3; i++ )
@@ -126,14 +126,14 @@ int main( int argc, char **argv )
 
 
 
-void set_up_golden_values( double t )
+void set_up_golden_values( void )
 {
   // suppose that for some reason we
   // need that the random values are
   // generated only by a single thread
   //
   for( int j = 0; j < 3; j++ )	 
-    golden_values[j] = drand48();
+    golden_values[j] = lrand48();
   
   return;
 }

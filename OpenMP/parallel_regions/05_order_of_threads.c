@@ -41,11 +41,11 @@ int main( int argc, char **argv )
 
   int nthreads;
   
-#if defined(_OPENMP)
+ #if defined(_OPENMP)
 
   int order = 0;
   
-#pragma omp parallel               // this creates a parallel region
+ #pragma omp parallel               // this creates a parallel region
                                    // that is encompassed by the
                                    // opening and closing { }
                                    //
@@ -57,7 +57,7 @@ int main( int argc, char **argv )
   {   
     
     int my_thread_id = omp_get_thread_num();
-    #pragma omp master
+   #pragma omp master
     nthreads = omp_get_num_threads();
 
                                    // now we impose an ordered output
@@ -77,7 +77,7 @@ int main( int argc, char **argv )
 	                           // those that succeed, print and modify the
 	                           // "order" value depends on which have been
 	                           // the previous ones and on the delay.
-#pragma omp critical 
+       #pragma omp critical 
 	if ( order == my_thread_id )
 	  {
 	    printf( "\tgreetings from thread num %d\n", my_thread_id );
@@ -86,10 +86,10 @@ int main( int argc, char **argv )
 	  }
       }
   }
-#else
+ #else
   
   nthreads = 1;
-#endif
+ #endif
   
   printf(" %d thread%s greeted you from the %sparallel region\n", nthreads, (nthreads==1)?" has":"s have", (nthreads==1)?"(non)":"" );
   

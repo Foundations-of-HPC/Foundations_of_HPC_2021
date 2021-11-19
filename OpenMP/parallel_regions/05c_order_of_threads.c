@@ -47,9 +47,9 @@ int main( int argc, char **argv )
 
   int nthreads;
   
-#if defined(_OPENMP)
+ #if defined(_OPENMP)
 
-#pragma omp parallel
+ #pragma omp parallel
   {   
     
     int my_thread_id = omp_get_thread_num();
@@ -64,10 +64,10 @@ int main( int argc, char **argv )
       
 
   }
-#else
+ #else
   
   nthreads = 1;
-#endif
+ #endif
   
   printf(" %d thread%s greeted you from the %sparallel region\n", nthreads, (nthreads==1)?" has":"s have", (nthreads==1)?"(non)":"" );
   

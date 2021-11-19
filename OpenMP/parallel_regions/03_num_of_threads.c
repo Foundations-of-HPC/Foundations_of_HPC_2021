@@ -94,7 +94,7 @@ int main( int argc, char **argv )
   omp_set_num_threads( threads_num );
 
   
-#pragma omp parallel               // this creates a parallel region
+ #pragma omp parallel              // this creates a parallel region
                                    // that is encompassed by the
                                    // opening and closing { }
                                    //
@@ -114,7 +114,7 @@ int main( int argc, char **argv )
   {   
     
     int my_thread_id = omp_get_thread_num();
-    #pragma omp master
+   #pragma omp master
     nthreads = omp_get_num_threads();
 
                                    // the order in which different threads will

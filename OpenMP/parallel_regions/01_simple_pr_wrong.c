@@ -44,8 +44,6 @@ int main( int argc, char **argv )
   
 #if defined(_OPENMP)
 
-  printf("parallel region A\n\n");
-  
 #pragma omp parallel               // this creates a parallel region
                                    // that is encompassed by the
                                    // opening and closing { }
@@ -70,30 +68,6 @@ int main( int argc, char **argv )
     printf( "\tgreetings from thread num %d among %d\n", my_thread_id, nthreads);
   }
 
-  printf("\nparallel region B\n\n");
-
-  #pragma omp parallel               // this creates a parallel region
-                                   // that is encompassed by the
-                                   // opening and closing { }
-                                   //
-                                   // you can modify the number of
-                                   // spawned threads through the
-                                   //   OMP_THREAD_NUM
-                                   // environmental variable
-  
-  {   
-    
-    my_thread_id = omp_get_thread_num();  // note: this assignment is not thread-safe
-   #pragma omp master
-    nthreads = omp_get_num_threads();
-
-                                   // the order in which different threads will
-                                   // arrive at this print is undefined;
-                                   // if you run this code several times, you will
-                                   // obtain different results
-
-    printf( "\tgreetings from thread num %d among %d\n", my_thread_id, nthreads);
-  }
 #else
   
   nthreads = 1;

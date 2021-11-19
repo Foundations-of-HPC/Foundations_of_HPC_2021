@@ -4,11 +4,11 @@
 
 ***version 0.95***
 
-#### Submission policy: creating a directory on /fast/dssc/2021Assignement01/username on ORFEO and put all the files required there.
+#### Submission policy: creating a directory on /fast/dssc/username/2021Assignement01 on ORFEO and put all the files required there.
 
 hints:
 
-`` mkdir /fast/dssc/2021Assignement01/my_username`` 
+`` mkdir /fast/dssc/my_username/2021Assignement01`` 
 
 ### COMPUTATIONAL RESOURCES:
 

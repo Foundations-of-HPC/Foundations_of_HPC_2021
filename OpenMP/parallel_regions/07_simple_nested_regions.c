@@ -46,10 +46,10 @@ int main( int argc, char **argv )
   #pragma omp parallel
   {
     int nthreads = omp_get_num_threads();
-    #pragma omp single
+   #pragma omp single
     printf("%d threads in the outer parallel region\n", nthreads);
 
-    #pragma omp parallel
+   #pragma omp parallel
     {
       int nthreads_inner = omp_get_num_threads();
       #pragma omp single

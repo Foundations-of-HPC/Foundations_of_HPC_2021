@@ -33,123 +33,64 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <time.h>
-#include <math.h>
 #include <omp.h>
 
 
-#define THRESHOLD 2000
-
-int    more_data_arriving( int );
-int    getting_data( int, int * );
-double heavy_work( int );
-
-
-int main ( int argc, char **argv )
+int main( int argc, char **argv )
 {
 
-  srand48(time(NULL));
+  int nthreads;
 
+#if defined(_OPENMP)
 
-  // you are free to decide which
-  // variable are shared and (thread)private
-  //
+  int threads_num = 1;
 
-
-  // ....
-  //
+  if ( argc > 1 )
+    {
+				             // read the argument given
+      threads_num = atoi(*(argv+1));
+      omp_set_num_threads( threads_num );
+    }
   
- #pragma omp parallel
-  {
-    while( data_are_arriving )       // data_are_arriving should be
-				     // an int whose value is known
-				     // to everybody
-      {
-
-        // you must account for how many
-        // iteration have been done in
-	// this loop
-	
-	// [1] here somebody receives
-	//     the data (and how many
-	//     they are).
-	//     Assume that the number
-	//     of data are in the range
-	//     [1..Nthreads]
-	//     "data" is an array of
-	//     integers that is generated
-	//     by getting_data()
-
-	// [2] threads process the data
-	//     so that each thread process
-	//     one.
-	//     "processing" means to call
-	//     the function heavy_work()
-	//     using as argument an entry
-	//     of the int array generated
-	//     by getting_data() at step [1]
-	//
-	//     All the data must be processed
-	//     before getting to the next
-	//     iteration
-
-	// [3] somebody get whether new
-	//     data will be arriving by
-	//     calling more_data_arriving().
-	//     The argument of more_data_arriving()
-	//     is the iteration number
-
-	// [4] somebody updates the iteration
-	//     number
+ #pragma omp parallel              // this creates a parallel region
+                                   // that is encompassed by the
+                                   // opening and closing { }
+                                   //
+                                   // you can modify the number of
+                                   // spawned threads in different
+                                   // ways:
+                                   // 1) through the OMP_THREAD_NUM
+                                   //    environmental variable
+                                   // 2) using the omp_set_num_threads()
+                                   //
+                                   // you can also declare the desired
+                                   // number at the creation of the
+                                   // parallel region:
+  
+  // #pragma omp parallel num_threads( threads_num )
+  
+  {   
     
-      }
-    
+    int my_thread_id = omp_get_thread_num();
+   #pragma omp master
+    nthreads = omp_get_num_threads();
+
+                                   // the order in which different threads will
+                                   // arrive at this print is undefined;
+                                   // if you run this code several times, you will
+                                   // obtain different results
+
+    printf( "\tgreetings from thread num %d\n", my_thread_id );
   }
+
+#else
+
+  nthreads = 1;
+
+#endif
+
+  printf(" %d thread%s greeted you from the %sparallel region\n",
+	nthreads, (nthreads==1)?" has":"s have", (nthreads==1)?"(non)":"" );  
   
   return 0;
-}
-
-
-int more_data_arriving( int i )
-{
-  // it is increasingly probable that
-  // no more data arrive when i approaches
-  // THRESHOLD
-  //
-  double p = (double)(THRESHOLD - i) / THRESHOLD;
-  return (drand48() < p);
-}
-
-
-int getting_data( int n, int *data )
-{
- #define MIN  1000
- #define MAX 10000
-  
-  // produces no more than n-1
-  // data
-  int howmany = lrand48() % n;
-  howmany = ( howmany == 0 ? 1 : howmany);
-
-  // be sure that the data
-  // array has enough room
-  // to host up to n-1 data
-  for( int j = 0; j < howmany; j++ )
-    data[j] = 1024 + lrand48() % (MAX-MIN);  // values will range
-				             // from MIN up to MAX
-  
-  return howmany;
-}
-
-double heavy_work( int N )
-{
-  double guess = 3.141572 / 3 * N;
-
-  for( int i = 0; i < N; i++ )
-    {
-      guess = exp( guess );
-      guess = sin( guess );
-
-    }
-  return guess;
 }

@@ -56,15 +56,16 @@ int main( int argc, char **argv )
     int my_thread_id = omp_get_thread_num();  // note: this assignment is now
                                               // thread-safe because the lvalue
 					      // is a private variable
-    #pragma omp master
+   #pragma omp master
     nthreads = omp_get_num_threads();
 
+   #pragma omp barrier
                                    // the order in which different threads will
                                    // arrive at this print is undefined;
                                    // if you run this code several times, you will
                                    // obtain different results
 
-    printf( "\tgreetings from thread num %d\n", my_thread_id);
+    printf( "\tgreetings from thread num %d over %d\n", my_thread_id, nthreads);
   }
 #else
   

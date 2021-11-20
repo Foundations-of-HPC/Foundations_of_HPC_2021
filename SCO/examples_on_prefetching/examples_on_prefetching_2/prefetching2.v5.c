@@ -16,7 +16,7 @@ for ( int r = 0; r < ITER; r++ )
     v4d register ssum = {0.0};
     v4d prefetch;
     v4d value;
-    v4d *line = (v4d*)&array[    0 ];
+    v4d *line = (v4d*)&array[0];
     v4d *stop = line + N_4;
 	
     WIPE_CACHE;

@@ -1,0 +1,13 @@
+.. _clearline:
+
+.. index::
+   pair: command; clearline
+
+Clear line
+==========
+
+**Syntax**:(clearline)
+
+Clear current line. This function also increases the line key.
+
+**Available as**: command

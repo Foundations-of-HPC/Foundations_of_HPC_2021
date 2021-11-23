@@ -70,6 +70,13 @@ int main( int argc, char **argv )
 
 
     printf("thread %d: from %d to %d\n", me, my_first, my_first+my_chunk);
+
+    /*
+     * here you could then insert a for loop
+     * int my_stop = my_first + my_chunk;
+     * for( int i = myfirst; i < my_stop; i++ )
+     *   ...
+     */
   } 
 
 

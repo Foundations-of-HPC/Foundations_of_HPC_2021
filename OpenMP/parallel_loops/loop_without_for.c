@@ -61,15 +61,13 @@ int main( int argc, char **argv )
     
     int chunk    = N / nthreads;
     int mod      = N % nthreads;
-
-    #pragma omp single
-    printf("nthreads: %d, N: %d --- chunk is %d, reminder is %d\n", nthreads, N, chunk, mod);
-
     int my_first = chunk*me + ((me < mod)?me:mod);
     int my_chunk = chunk + (mod > 0)*(me < mod);
 
+   #pragma omp single
+    printf("nthreads: %d, N: %d --- chunk is %d, reminder is %d\n", nthreads, N, chunk, mod);
 
-    printf("thread %d: from %d to %d\n", me, my_first, my_first+my_chunk);
+    printf("thread %d : from %d to %d\n", me, my_first, my_first+my_chunk);
 
     /*
      * here you could then insert a for loop

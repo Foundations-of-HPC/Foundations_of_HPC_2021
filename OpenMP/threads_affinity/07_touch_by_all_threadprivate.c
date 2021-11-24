@@ -93,17 +93,17 @@ int main( int argc, char **argv )
   if ( argc > 1 )
     N = (unsigned long long int) atoll( *(argv+1) );
 
-#if defined(_OPENMP)    
+ #if defined(_OPENMP)    
   int endrun = 0;
   
   // just give notice of what will happen and get the number of threads used
-#pragma omp parallel
+ #pragma omp parallel
   {
     nthreads = omp_get_num_threads();
-#ifdef OUTPUT    
-#pragma omp master
+   #ifdef OUTPUT    
+   #pragma omp master
     PRINTF("omp summation with %d threads\n", nthreads );
-#endif
+   #endif
     
     int me = omp_get_thread_num();
     PRINTF("thread %2d is running on core %2d\n", me, get_cpu_id() );    
@@ -115,7 +115,7 @@ int main( int argc, char **argv )
   // scheduling as the final one
 
 
-#pragma omp for schedule(static)
+   #pragma omp for schedule(static)
     for ( unsigned long long int ii = 0; ii < N; ii++ )
       {
 	first_iteration = ii;
@@ -130,17 +130,17 @@ int main( int argc, char **argv )
 	       "enough memory to host %llu bytes\n",
 	       me, 
 	       mywork * sizeof(double) );
-#pragma omp atomic
+       #pragma omp atomic
 	endrun += 1;
       }
     else
       printf("thread %d: mywork is %Lu, array is at %p\n", me, mywork, array);
 
-#pragma omp barrier
-
+   #pragma omp barrier
+    
     if ( !endrun )
       {
-#pragma omp for schedule(static)
+       #pragma omp for schedule(static)
 	for ( unsigned long long int ii = 0; ii < N; ii++ )
 	  array[ ii - first_iteration ] = (double)ii;
       }
@@ -155,17 +155,17 @@ int main( int argc, char **argv )
   printf("out of the parallel regions the array location is %p\n", array);
   
   PRINTF("Initialization done\n");
-#else
-
-    if ( (array = (double*)calloc( N, sizeof(double) )) == NULL ) {
+ #else
+  
+  if ( (array = (double*)calloc( N, sizeof(double) )) == NULL ) {
     printf("I'm sorry, on some thread there is not"
 	   "enough memory to host %lu bytes\n",
 	   N * sizeof(double) ); return 1; }
-
-    for ( unsigned long long int ii = 0; ii < N; ii++ )
-      array[ii] = (double)ii;
-    
-#endif
+  
+  for ( unsigned long long int ii = 0; ii < N; ii++ )
+    array[ii] = (double)ii;
+  
+ #endif
   
   /*  -----------------------------------------------------------------------------
    *   calculate
@@ -183,23 +183,23 @@ int main( int argc, char **argv )
   
   double tstart  = CPU_TIME;
 
-#if !defined(_OPENMP)
+ #if !defined(_OPENMP)
   
   for ( int ii = 0; ii < N; ii++ )                          // well, you may notice this implementation
     S += array[ii];                                         // is particularly inefficient anyway
-
-#else
-
-#pragma omp parallel reduction(+:th_avg_time)				\
-  reduction(min:th_min_time)                                            \
+  
+ #else
+  
+ #pragma omp parallel reduction(+:th_avg_time)				\
+   reduction(min:th_min_time)						\
   reduction(max:th_max_time)                                // in this region there are 2 different
   {                                                         // reductions: the one of runtime, which
     struct  timespec myts;                                  // happens in the whole parallel region;
     double mystart = CPU_TIME_th;                           // and the one on S, which takes place
-
+    
     printf("Thread %d is accessing memory %p\n", omp_get_thread_num(), array );
     
-#pragma omp for schedule(static) reduction(+:S)
+   #pragma omp for schedule(static) reduction(+:S)
     for ( unsigned long long int ii = 0; ii < N; ii++ )
       S += array[ii-first_iteration];
     
@@ -208,7 +208,7 @@ int main( int argc, char **argv )
     th_min_time  = mytime;
     th_max_time  = mytime;
     }
-#endif
+ #endif
 
 
   double tend = CPU_TIME;
@@ -219,15 +219,15 @@ int main( int argc, char **argv )
    *  -----------------------------------------------------------------------------
    */
 
-printf("Sum is %Lg, process took %g of wall-clock time\n\n"
+  printf("Sum is %Lg, process took %g of wall-clock time\n\n"
 	 "<%g> sec of avg thread-time\n"
 	 "<%g> sec of min thread-time\n"
 	 "<%g> sec of max thread-time\n"       ,
-       S, tend - tstart, th_avg_time/nthreads, th_min_time, th_max_time );
+	 S, tend - tstart, th_avg_time/nthreads, th_min_time, th_max_time );
 
 /* #pragma omp parallel */
 /*   free( array ); */
-
+  
   return 0;
 }
 
@@ -238,13 +238,13 @@ printf("Sum is %Lg, process took %g of wall-clock time\n\n"
 
 int get_cpu_id( void )
 {
-#if defined(_GNU_SOURCE)                              // GNU SOURCE ------------
+ #if defined(_GNU_SOURCE)                              // GNU SOURCE ------------
   
   return  sched_getcpu( );
 
-#else
+ #else
 
-#ifdef SYS_getcpu                                     //     direct sys call ---
+ #ifdef SYS_getcpu                                     //     direct sys call ---
   
   int cpuid;
   if ( syscall( SYS_getcpu, &cpuid, NULL, NULL ) == -1 )
@@ -252,7 +252,7 @@ int get_cpu_id( void )
   else
     return cpuid;
   
-#else      
+ #else      
 
   unsigned val;
   if ( read_proc__self_stat( CPU_ID_ENTRY_IN_PROCSTAT, &val ) == -1 )
@@ -260,8 +260,8 @@ int get_cpu_id( void )
 
   return (int)val;
 
-#endif                                                // -----------------------
-#endif
+ #endif                                                // -----------------------
+ #endif
 
 }
 

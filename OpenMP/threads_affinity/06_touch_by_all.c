@@ -97,19 +97,19 @@ int main( int argc, char **argv )
 	   N * sizeof(double) ); return 1; }
   
   // just give notice of what will happen and get the number of threads used
-#if defined(_OPENMP)  
-#pragma omp parallel
+ #if defined(_OPENMP)  
+ #pragma omp parallel
   {
-#pragma omp master
+ #pragma omp master
     {
       nthreads = omp_get_num_threads();
       PRINTF("omp summation with %d threads\n", nthreads );
     }
     int me = omp_get_thread_num();
-#pragma omp critical
+ #pragma omp critical
     PRINTF("thread %2d is running on core %2d\n", me, get_cpu_id() );    
   }
-#endif
+ #endif
 
   // initialize the array;
   // each thread is "touching"
@@ -118,7 +118,7 @@ int main( int argc, char **argv )
   // scheduling as the final one
 
   double _tstart = CPU_TIME_th;
-#pragma omp parallel for
+ #pragma omp parallel for
   for ( int ii = 0; ii < N; ii++ )
     array[ii] = (double)ii;
   double _tend = CPU_TIME_th;
@@ -139,19 +139,19 @@ int main( int argc, char **argv )
   
   double tstart  = CPU_TIME;
 
-#if !defined(_OPENMP)
+ #if !defined(_OPENMP)
   
   for ( int ii = 0; ii < N; ii++ )                          // well, you may notice this implementation
     S += array[ii];                                         // is particularly inefficient anyway
 
-#else
+ #else
 
-#pragma omp parallel reduction(+:th_avg_time)				\
+ #pragma omp parallel reduction(+:th_avg_time)				\
   reduction(min:th_min_time)                                // in this region there are 2 different
   {                                                         // reductions: the one of runtime, which
     struct  timespec myts;                                  // happens in the whole parallel region;
     double mystart = CPU_TIME_th;                           // and the one on S, which takes place  
-#pragma omp for reduction(+:S)                              // in the for loop.                     
+   #pragma omp for reduction(+:S)                              // in the for loop.                     
     for ( int ii = 0; ii < N; ii++ )
       S += array[ii];
 
@@ -159,7 +159,7 @@ int main( int argc, char **argv )
     th_min_time  = CPU_TIME_th - mystart; 
   }
 
-#endif
+ #endif
   
   double tend = CPU_TIME;
 
@@ -177,9 +177,9 @@ int main( int argc, char **argv )
 	 th_avg_time/nthreads, th_min_time );
  #endif
 
-free( array );
-
-return 0;
+  free( array );
+ 
+  return 0;
 }
 
 

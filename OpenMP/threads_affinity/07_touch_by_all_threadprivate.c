@@ -192,7 +192,7 @@ int main( int argc, char **argv )
   
  #pragma omp parallel reduction(+:th_avg_time)				\
    reduction(min:th_min_time)						\
-  reduction(max:th_max_time)                                // in this region there are 2 different
+   reduction(max:th_max_time)                               // in this region there are 2 different
   {                                                         // reductions: the one of runtime, which
     struct  timespec myts;                                  // happens in the whole parallel region;
     double mystart = CPU_TIME_th;                           // and the one on S, which takes place

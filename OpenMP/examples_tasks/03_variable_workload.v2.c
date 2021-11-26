@@ -156,34 +156,38 @@ int main( int argc, char **argv )
 
   double tstart = CPU_TIME;
 			     
-#pragma omp parallel proc_bind(close) reduction(+:result)
+ #pragma omp parallel proc_bind(close) reduction(+:result)
   {
 
-    #pragma omp single nowait
+   #pragma omp single nowait
     {
       int idx   = 0;
       int first = 0;
       int last  = chunk;
-      #if defined (MIMIC_SLOWER_INITIALIZATION)
+     #if defined (MIMIC_SLOWER_INITIALIZATION)
       struct timespec nanot = {0, 200*uSEC};
       nanosleep( &nanot, NULL );
-      #endif
-      #if defined(DEBUG)
+     #endif
+     #if defined(DEBUG)
       struct timespec myts;
       double tstart = CPU_TIME_th;
       int    me     = omp_get_thread_num();
-      #endif
+     #endif
 	
       while( first < N )
 	{
-	  last = (last >= N)?N:last;
+	  last = (last >= N)? N : last;
 	  for( int kk = first; kk < last; kk++, idx++ )
 	    array[idx] = min_value + lrand48() % max_value;
 
 	  PRINTF("* initializer (thread %d) : %g sec, initialized chunk from %d to %d\n",
 		 me, CPU_TIME_th - tstart, first, last);
 
-          #pragma omp task firstprivate(first, last) shared(result) untied
+	 #pragma omp task firstprivate(first, last) shared(result) untied
+	  // note: by scoping rules, variables "first" and "last"
+	  // would have been automatically firstprivate since they
+	  // are local private variables in the enclosing single
+	  // region
 	  {
 	    double myresult    = 0;
 	    for( int ii = first; ii < last; ii++)
@@ -191,7 +195,12 @@ int main( int argc, char **argv )
             #pragma omp atomic update
 	    result += myresult;
 	  }
-          #pragma omp task firstprivate(first, last) shared(result) untied
+	  
+	 #pragma omp task firstprivate(first, last) shared(result) untied
+	  // note: by scoping rules, variables "first" and "last"
+	  // would have been automatically firstprivate since they
+	  // are local private variables in the enclosing single
+	  // region
 	  {
 	    double myresult    = 0;
 	    for( int ii = first; ii < last; ii++)
@@ -199,7 +208,12 @@ int main( int argc, char **argv )
             #pragma omp atomic update
 	    result += myresult;	    
 	  }
-          #pragma omp task firstprivate(first, last) shared(result) untied
+	  
+	 #pragma omp task firstprivate(first, last) shared(result) untied
+	  // note: by scoping rules, variables "first" and "last"
+	  // would have been automatically firstprivate since they
+	  // are local private variables in the enclosing single
+	  // region
 	  {
 	    double myresult    = 0;
 	    for( int ii = first; ii < last; ii++)

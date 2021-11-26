@@ -47,9 +47,8 @@ int main( int argc, char **argv )
 
     #pragma omp single nowait
     {
-      int me = omp_get_thread_num();
       printf( " »Yuk yuk, here is thread %d from "
-	      "within the single region\n", me );
+	      "within the single region\n", omp_get_thread_num() );
       
       #pragma omp task
       {

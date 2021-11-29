@@ -92,8 +92,8 @@ If the either the two assignments will not have been submitted, or they are not 
 | DATE        | LECTURES                                                     | TUTORIALS                                            | ASSIGNEMENTS                                           |
 | :---------- | :----------------------------------------------------------- | :--------------------------------------------------- | :--------------------------------------------------- |
 | Mon, Oct 4  | [1] [Introduction to course/ introduction to HPC](Intro/README.md)              |                                                      |                                                      |
-| Tue, Oct 5  | [2] [Introduction to HPC: part 2](Intro/README.md)  /       [3] [HPC Hardware and HPC software stack and tools](Intro/README.md)                                 |                                                      |                                                      |
-| Thu, Oct 7 | [4] [Parallel computing concepts](Intro/README.md)                      |                                                      |                                                      |
+| Tue, Oct 5  | [2] [Introduction to HPC: part 2](Intro/README.md)                                      |                                                      |                                                      |
+| Thu, Oct 7 |  [3] [HPC Hardware and HPC software stack and tools](Intro/README.md)                      |                                                      |                                                      |
 | Fri, Oct 8  |                              |                       | [Assignment 0: enable your account on ORFEO ](Intro/README.md)   | 
 | Mon, Oct 11 |  |      [1] [Using an HPC infrastructure](Intro/README.md)                                                |                                                      |
 | Tue, Oct 12 | [5] [Single Core Optimization (SCO) / 1<br />*Modern Architecture + Opt. Intro + Stack & Heap + Memory allocation*](SCO/README.md) |                                 |                                                      |
@@ -103,36 +103,36 @@ If the either the two assignments will not have been submitted, or they are not 
 | Tue, Oct 19  | [8] [SCO / 4<br />*Pipelines +branch predictions*](SCO/README.md)                                |                                |                                                      |
 | Thu, Oct 21 |[9] [SCO / 5<br />*Prefetching + vectorization*](SCO/README.md)                                               |                                                      |                                                      |
 | Fri, Oct 22 |                                                   | [3] [Debugging](SCO/README.md)                                |                   |
-| Mon, Oct  25 |[10] [Message Passing and intro to MPI programming](MPI/README.md)                                               |                                                      |                                                      |
-| Tue, Oct 26 | [11] [Again on MPI programming](MPI/README.md)                                            |                             |                   |
-| Thu, Oct 28 | [12] [domain decomposition with MPI](MPI/README.md)                                                 |                                                      |                                                      |
-|Fri, Oct 29  |                        |  [4] [Exercises on MPI](MPI/README.md)  |   [Assignment 1](Assignment1/README.md) |
-| Thu, Nov 4  | [13] [Network Hardware and Performance Model](MPI/README.md)                                             |                                                      |                                                      |
-| Fri, Nov 5  | [14] [Performance Model](MPI/README.md)                                              | [5] [``short tutorial on measuring MPI performance on ORFEO nodes](MPI/README.md)                             |                                                      |
-| Mon, Nov 8  |  [15] [OpenMP / 1](OpenMP/README.md)                                           |                                                      |                                                      |
-| Tue, Nov 9 | [16] [OpenMP / 2](OpenMP/README.md)                                              |                     |   |                                                      |
-| Thu, Nov 11 | [17] [OpenMP / 3](OpenMP/README.md)              |  |                         |
-| Fri, Nov 12  |              |  [6] [Exercises on OpenMP](OpenMP/README.md)                                                |                                                      |
-| Mon, Nov 15 | [18] [OpenMP / 4](OpenMP/README.md)                                  |                                                   |                                                      |
-| Tue, Nov 16 | [19] [OpenMP / 5](OpenMP/README.md)           |                                 | |
-| Thu, Nov 18 | [20] [OpenMP / 6](OpenMP/README.md)                                |                                                      |                                                      |
-| Fri, Nov 19 |                         |            [7] [Exercises on openMP](OpenMP/README.md)   |   [Assigment 2](Assignment2/README.md) |
-| Mon, Nov 22 | [21] [MPI libraries](Libraries/README.MD) |   |
-| Tue, Nov 23 | [22] [Parallel HPC libraries](Libraries/README.MD)   |   |   |
-| Thu, Nov 25 | [23] [Benchmarking HPC systems](Libraries/README.MD) |   |   |
-| Fri, Nov 26 |   |      [8] [Exercises on benchmarking](Libraries/README.md) |  |
-| Mon, Nov 29 | [24] [Parallel Storage](ParallelStorage/README.MD)   |   |   |
-| Tue, Nov 30 | [25] [Parallel FS](ParallelStorage/README.MD)  |    |   |
-| Thu, Dec 2 |  [26] [Parallel I/O](ParallelStorage/README.MD)    |    |      |
-| Fri, Dec 3 |                                |       [9] [exercise on parallel I/O](ParallelStorage/README.md)  |    |
-| Mon, Dec 6 | [27]  [roof model + parallel performance analysis /1](PerformanceAnalysis/README.md)    |       |                                                      |
-| Tue, Dec 7 | [28]  [Parallel Performance Analysis /2](PerformanceAnalysis/README.md)    |      |     |
-| Thu, Dec 9 | [29]  [Parallel Performance Analysisscalasca](PerformanceAnalysis/README.md)  |     |
-| Fri, Dec 10 |                                 |    [10] [exercise on parallel performance analysis](PerformanceAnalysis/README.md) |
-| Mon, Dec 13 | [30] [GPU programming/1](GPU/README.md)                                |                                                      |
-| Tue, Dec 14 | [31] [GPU programming/2](GPU/README.md)                                     |                                                      |
-| Thu, Dec 16 |                                |  [11] [exercises on GPU](GPU/README.md)                                          |
-| Fri, Dec 17 | [32]  TBD                               |                                                      |
+| Mon, Oct  25 |[10] [Parallel programming concepts and performance](MPI/lecture04-on-parallel-performance.pdf)                                               |                                                      |                                                      |
+| Tue, Oct 26 | [11] [Message Passing and MPI programminng](MPI/README.md)                                            |                             |                   |
+| Thu, Oct 28 | [12] [Collective MPI operations and virtual topology](MPI/README.md)                                                 |                                                      |                                                      |
+|Fri, Oct 29  | [13] [Domain Decomposition with MPI](MPI/README.md)                     |  [4] [Exercises on MPI](MPI/README.md)  |   |
+| Thu, Nov 4  | [14] [Network basic for MPI application](MPI/README.md)                                             |                                                      |                                                      |
+| Fri, Nov 5  | [15] [MPI libraries and performance model](MPI/README.md)                                              |                             |                                                      |
+| Mon, Nov 8  |                                           |      [5] [short tutorial on measuring MPI performance on ORFEO nodes](MPI/README.md)                                                 |                                                      |
+| Tue, Nov 9 | [16]  [Performance Evaluation for MPI](MPI/README.md)                                          |                     |   |                                                      |
+| Thu, Nov 11 |             |  |    [Assignment 1](Assignment1/README.md)                     |
+| Fri, Nov 12  |              |  [6] [short tutorial on using ORFEO at best for the assignment](MPI/README.md)                                                |                                                      |
+| Mon, Nov 15 | [17] [OpenMP / 1](OpenMP/README.md)                                  |                                                   |                                                      |
+| Tue, Nov 16 | [18] [OpenMP / 2](OpenMP/README.md)           |                                 | |
+| Thu, Nov 18 | [19] [OpenMP / 3](OpenMP/README.md)                                |                                                      |                                                      |
+| Fri, Nov 19 | [20] [OpenMP / 4](OpenMP/README.md)                 |            [7] [Exercises on openMP](OpenMP/README.md)   |   [Assigment 2](Assignment2/README.md) |
+| Mon, Nov 22 | [21] [OpenMP / 5 ](OpenMP/README.md)     |
+| Tue, Nov 23 | [22] [OpenMP / 6 ](OpenMP/README.md)     |   |   |
+| Thu, Nov 25 | [23] [OpenMP / 7 ](OpenMP/README.md)     |   |   |
+| Fri, Nov 26 | [23] [OpenMP / 8 ](OpenMP/README.md)     |   |   |
+| Mon, Nov 29 | [24] [OpenMP / 9 ](OpenMP/README.md)     |   |   |
+| Tue, Nov 30 | [25] [Parallel HPC libraries](Libraries/README.MD)  |    |   |
+| Thu, Dec 2 |  [26] [Benchmarking HPC systems](Libraries/README.MD)     |    |      |
+| Fri, Dec 3 |                                |       [9]  [Exercises on benchmarking](Libraries/README.md)      |    |
+| Mon, Dec 6 | [27]  [Parallel I/O](ParallelStorage/README.MD)    |       |                                                      |
+| Tue, Dec 7 | [28]  [exercise on parallel I/O](ParallelStorage/README.md)    |      |     |
+| Thu, Dec 9 | [29]  [roof model + parallel performance analysis /1](PerformanceAnalysis/README.md)   |     |
+| Fri, Dec 10 |c[30] [Parallel Performance Analysis /2](PerformanceAnalysis/README.md)                                |     (PerformanceAnalysis/README.md) |
+| Mon, Dec 13 | [31]  [Parallel Performance Analysisscalasca](PerformanceAnalysis/README.md)                               |                                                      |
+| Tue, Dec 14 |                                  |              [10] [exercise on parallel performance analysis]                                          |
+| Thu, Dec 16 | [32]  [GPU programming/1](GPU/README.md)                                          |
+| Fri, Dec 17 | [33]  [GPU programming/2](GPU/README.md)                                 |                                                      |
 
 #### PRACTICAL ADVICES
 As you will experiment, having a Linux is always the most adequate solution (Linux is running on the vast majority - possible the 100% - on HPC facilities and brings native tools and utilities for programming).

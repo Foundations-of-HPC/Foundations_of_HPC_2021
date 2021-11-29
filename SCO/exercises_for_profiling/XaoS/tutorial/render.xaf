@@ -1,0 +1,27 @@
+(load "msetren.xaf")
+
+(usleep 500000)
+(clearscreen)
+(textposition 'center 'middle)
+(text "This animation is part of
+animated tutorial
+\"An introduction to fractals\"
+
+See http://xaos.sf.net
+for next 8 chapters.")
+(textsleep)
+(text "Rendered by
+XaoS - a real-time fractal zoomer
+
+XaoS is free software. Download it from:
+http://xaos.sf.net
+to see the whole tutorial calculated in
+realtime at much higher quality.")
+(textsleep)
+(clearscreen)
+(textposition 'center 'top)
+(message "fcopyright")
+(textposition 'center 'bottom)
+(text "You can redistribute this animation
+freely as long as the original MPEG file is untouched.")
+(textsleep)

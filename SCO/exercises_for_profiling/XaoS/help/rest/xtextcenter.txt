@@ -1,0 +1,11 @@
+.. _xtextcenter:
+
+.. index::
+   pair: menu item; Center
+
+Center
+======
+
+Draw :ref:`text <text>` in the center of the screen.
+
+**Available as**: menu item

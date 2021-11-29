@@ -74,8 +74,8 @@ int main( int argc, char **argv)
   int     init_array = 1;
   struct  timespec ts;
 
-  myFloat *array;
-  myFloat *wipe_cache;
+  _Alignas(32) myFloat *array;
+  _Alignas(32) myFloat *wipe_cache;
 
   // check arguments and init memory
 
@@ -88,7 +88,7 @@ int main( int argc, char **argv)
   N_CACHE = N + 128;    
 
   // allocate memory for the array that must be summed up
-  if ( (array = (myFloat*)malloc(N * sizeof(myFloat)) ) == NULL )
+  if ( (array = (myFloat*)aligned_alloc(32, N * sizeof(myFloat)) ) == NULL )
     {
       printf("not enough memory to allow %d doubles (%llu)\n",
 	     N, 
@@ -97,7 +97,7 @@ int main( int argc, char **argv)
     }
 
   // allocate memory for another array to be used to wipe the cache content
-  if ( (wipe_cache = (myFloat*)malloc(N_CACHE * sizeof(myFloat)) ) == NULL )
+  if ( (wipe_cache = (myFloat*)aligned_alloc(32, N_CACHE * sizeof(myFloat)) ) == NULL )
     {
       printf("not enough memory to allow %d doubles (%llu) for cache wiping\n",
 	     N_CACHE, 

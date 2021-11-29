@@ -1,0 +1,12 @@
+;Other fractal types in Xaos
+;Animation file is made by Arpad Fekete
+;This file was made in January 2006
+(initstate)
+(clearscreen)
+(textposition 'center 'middle)
+(message "otherfr1")
+(usleep 3000000)
+
+(load "trice.xaf")
+(load "fourfr.xaf")
+(load "classic.xaf")

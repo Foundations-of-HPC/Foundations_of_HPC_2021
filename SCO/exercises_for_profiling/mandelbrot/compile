@@ -1,0 +1,2 @@
+#!/bin/sh
+gcc -g3 -fno-omit-frame-pointer mandelbrot.c -lglut -lGLU -lGL -lm -o mandelbrot

@@ -10,7 +10,7 @@ In this exercise we will compile and use HPL to benchmark Orfeo using different 
 * different MPI implementations: OpenMPI vs IntelMPI
 * different BLAS implementation: OpenBlas vs IntelMKL
 
-The objective is to achieve a performance as close to the theoretical peak performance $R_{peak}$ as possible.
+The objective is to achieve a performance as close to the theoretical peak performance R<sub>peak</sub> as possible.
 
 --------------------------
 
@@ -22,7 +22,7 @@ The objective is to achieve a performance as close to the theoretical peak perfo
 
 #### Orfeo's theoretical peak performance on a thin node
 
-$R_{peak} = \textrm{Cores} \times \textrm{AVX512 turbo all cores frequency} \times \textrm{DP FLOPS/cycle} = 24 \times 2.3 GHz \times 32 \textrm{ FLOPS/cycle} = 1.766 \textrm{ TFLOPS}$
+R<sub>peak</sub> =  Cores x AVX512 all turbo cores frequency x DP FLOPS/cycle = 24 x 2.3 GHz x 32 FLOPS/cycle = 1.7 TFLOPS
 
 Ref: [Intel. spec. sheet](https://www.intel.com/content/dam/www/public/us/en/documents/specification-updates/xeon-scalable-spec-update.pdf)
 
@@ -72,7 +72,7 @@ make arch=linux64`
 
 - NB recommended setting for skylake architecture is 348 (you could try others but in that range)
 - N should be a multiple of NB
-- The problem is of size $\textrm{N}^2$. Double check that it fits in memory (764 GB for a thin node).
+- The problem is of size $N<sup>2</sup>. Double check that it fits in memory (764 GB for a thin node).
 - Remember that time to solution scales with N
 - P x Q  must be equal to the number of MPI processes
 
@@ -100,7 +100,7 @@ Prepare HPL.dat file to run the following combinations:
   </tr>
 </table>
 
-**Tips: ** 
+**Tips:** 
 
 * OMP threads can be set exporting the variable OMP_NUM_THREADS
 

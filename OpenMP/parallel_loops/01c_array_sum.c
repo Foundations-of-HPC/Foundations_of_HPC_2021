@@ -104,8 +104,8 @@ int main( int argc, char **argv )
   double tstart      = CPU_TIME;
   
  #pragma omp parallel for reduction(+:S)
-    for (int ii = 0; i < N; i++ )
-      S += array[i];
+    for (int ii = 0; ii < N; ii++ )
+      S += array[ii];
     
   /*  -----------------------------------------------------------------------------
    *   finalize

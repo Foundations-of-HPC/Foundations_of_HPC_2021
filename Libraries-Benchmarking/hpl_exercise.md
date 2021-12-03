@@ -31,6 +31,8 @@ Ref: [Intel. spec. sheet](https://www.intel.com/content/dam/www/public/us/en/doc
 
 ### 1 Compile HPL-OpenMPI - [reference](https://sites.google.com/site/rangsiman1993/comp-env/test-and-benchmarks/build-hpl-with-blas-and-mpi)
 
+**IMPORTANT:** Installation should be done in a compute node, NOT in the login node!
+
 1. Download HPL v.2.3.
 
 `wget --no-check-certificate https://www.netlib.org/benchmark/hpl/hpl-2.3.tar.gz`
@@ -66,7 +68,7 @@ make arch=linux64`
 
 ### 2 Running HPL benchmark
 
-**2.1.** Run HPL-OpenBlas with OpenMPI using 24 MPI processs on a thin node. The objective is to find out the right combination of parameters N, NB, P and Q,  that allows you to get at least 80% of peak performance.
+**2.1.** Run HPL-OpenBlas with OpenMPI using 24 MPI processs on a thin node. The objective is to find out the right combination of parameters N, NB, P and Q,  that which maximizes the effective/real performance. Results should be expressed as a percentage of the theoretical peak performance. 
 
 **Tips:**
 

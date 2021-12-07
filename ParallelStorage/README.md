@@ -6,7 +6,7 @@ A set of lecture to discuss storage and I/O on modern HPC platform.
 ### lectures
  - Stefano Cozzini : [Intro to I/O and storage for HPC- part1](lecture13-Storage-for-HPC-part1.pdf)
  - Stefano Cozzini : [Intro to I/O and storage for HPC- part2](lecture14-Storage-for-HPC-part2.pdf)
- - Stefano Cozzini : [Intro to I/O and storage for HPC- part2](lecture15-Storage-for-HPC-part2.pdf)
+ - Stefano Cozzini : [Intro to I/O and storage for HPC- part3](lecture15-Storage-for-HPC-part3.pdf)
 
 
 ### references

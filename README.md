@@ -60,6 +60,8 @@ Link for today lecture
 
 https://teams.microsoft.com/l/meetup-join/19:6HsghqYmJTd3mXlRuhDl9EZV5vX9imECoBk8VBWbQXk1@thread.tacv2/1633960864011?context=%7B%22Tid%22:%22a54b3635-128c-460f-b967-6ded8df82e75%22,%22Oid%22:%22d7c26965-1813-464f-b1dd-239b179a37e8%22%7D
 
+https://teams.microsoft.com/l/meetup-join/19%3ae7d09041acca41b9aa856b32db205960%40thread.tacv2/1639477577427?context=%7b%22Tid%22%3a%22a54b3635-128c-460f-b967-6ded8df82e75%22%2c%22Oid%22%3a%22d7c26965-1813-464f-b1dd-239b179a37e8%22%7d
+
 #### slack Channel link:
 
 https://join.slack.com/t/fhpc2021/shared_invite/zt-wp3dpcsn-CtRi3ICKavfjWiisEdPXWg

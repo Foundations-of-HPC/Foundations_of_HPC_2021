@@ -135,7 +135,7 @@ int main( int argc, char **argv )
     
    #pragma omp single nowait
     {
-      //#pragma omp taskloop grainsize(N/1000) reduction(+:result)
+   //#pragma omp taskloop grainsize(N/1000) reduction(+:result)
      #pragma omp taskloop num_tasks(N/10) reduction(+:result)
       for( int ii = 0; ii < N; ii++ )
 	{
